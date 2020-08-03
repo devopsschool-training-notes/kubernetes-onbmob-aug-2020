@@ -127,7 +127,7 @@ Mukundhar G	13.126.202.60
 Vanshika Sharma	13.233.107.112
 Mohan V	13.127.185.1
 Mahim Prasad Dey	13.127.219.223
-Aneesh	13.233.208.132
+Aneesh	52.66.44.175
 Sunil	13.233.84.128
 Madhu Priya	15.206.171.21
 Girish M	13.234.111.158
@@ -150,6 +150,32 @@ PEM
 	rajesh-mumbai.pem
 =======================================
 Time - 30 mins.
+
+WORKER SERVER
+==============================
+
+Agasthiyappan A	35.154.187.82
+Saurav Bhasin	35.154.218.248
+Nagesh L	13.234.76.86
+Mukundhar G	13.233.98.102
+Vanshika Sharma	3.7.254.96
+Mohan V	13.232.137.229
+Mahim Prasad Dey	13.232.234.220
+Aneesh	15.207.19.140
+Sunil	13.232.77.102
+Madhu Priya	13.235.81.137
+Girish M	15.207.98.39
+Mohammed Asif	35.154.44.70
+Manohar A	15.207.20.92
+Satheesh K	13.233.100.119
+Sergio Herrero	35.154.104.217
+Srinath Aravamudhan	13.232.171.31
+Shantha Kumar Vinoth	13.234.30.28
+Mahabaleshwara Bairi	13.235.75.41
+Priyadharshini	13.232.81.22
+Alfonso Lazaro	13.233.15.221
+Gopinath.P	15.206.203.126
+
 
 
 
