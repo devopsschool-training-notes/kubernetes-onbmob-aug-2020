@@ -118,13 +118,38 @@ Setting up a Kubernetes?
 		Workstation
 		worker
 
+MASTER
+=================================
+Agasthiyappan A	13.127.222.243
+Saurav Bhasin	3.6.40.9
+Nagesh L	13.235.45.58
+Mukundhar G	13.126.202.60
+Vanshika Sharma	13.233.107.112
+Mohan V	13.127.185.1
+Mahim Prasad Dey	13.127.219.223
+Aneesh	13.233.208.132
+Sunil	13.233.84.128
+Madhu Priya	15.206.171.21
+Girish M	13.234.111.158
+Mohammed Asif	13.233.125.147
+Manohar A	13.127.5.29
+Satheesh K	13.233.233.225
+Sergio Herrero	15.206.27.181
+Srinath Aravamudhan	13.127.236.121
+Shantha Kumar Vinoth	52.66.196.117
+Mahabaleshwara Bairi	35.154.62.95
+Priyadharshini	3.6.90.40
+Alfonso Lazaro	13.232.51.110
+Gopinath.P	13.127.25.25
 
 
-
-
-
-
-
+USER Name - centos
+PPK  Key - https://www.devopsschool.com/notes/docker/2019
+	rajesh-mumbai.ppk
+PEM 
+	rajesh-mumbai.pem
+=======================================
+Time - 30 mins.
 
 
 
