@@ -1,0 +1,131 @@
+1 2 3 4 5 6 7 8 9 
+=====================
+Rajesh Kumar
+=======================
+www.RajeshKumar.xyz
+=========================
+DevOps@RajeshKumar.xyz
+==========================
+Start Time - 11:30 AM IST 
+End time - 7:00 PM
+=========================
+One Lunch break - 1:30 - 2:30p IST
+One Tea/Coffee/Rest - 4:30 - 5:00 PM IST
+======================================
+Lab  - AWS
+========================
+
+Master		DONE
+	APIS 		--> POD -> Container -> image --> Google Registry
+	ETCD		--> POD -> Container -> image --> Google Registry
+	ControllerMgr	--> POD -> Container -> image --> Google Registry	
+	Schedular	--> POD -> Container -> image --> Google Registry
+	Kubelet
+	Docker
+	Proxy
+Worker			DONE
+	Kubelet
+	Docker
+	Proxy
+
+Workstation		DONE
+	kubectl
+
+API OBJECTS
+=================
+	PODS
+	ReplicationController
+	Deploy
+
+1 Node Clustor ---> Learning Purpose --> VMs -> Minikube
+Manual but in Vm or Physcial Machine -> using kubeadm [ in Training ]
+Manual but in Cloud --> KOPS
+Hosted & Managed Clustor -
+	AWS - EKS
+	GC - GEK
+	Azure - AKS
+Hardway - 
+https://github.com/kelseyhightower/kubernetes-the-hard-way
+===================================================================================
+
+
+Master			DONE
+========
+	Docker
+	https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+	------
+	https://www.devopsschool.com/blog/setting-up-kubernetes-clusters-using-kubeadm-manual-way-in-rhel-7-centos7/
+	kubeadm
+	Kubelet
+	Proxy
+	kubectl
+	CNI
+13.233.208.132
+centos
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.22.124:6443 --token q7t75s.sbkfxeeccau9ghwi \
+    --discovery-token-ca-cert-hash sha256:0417e46683f03c2ce242a6f16d34e3d03d59677fd556db6eac2612150e05afa2
+
+==============================================================
+How to setup a workstation....
+
+Me --> Kubectl -> kubeconfig
+		$CURR_DIR/.kube/config
+		$USER_HOME/.kube/config	- Recommended
+		ENV KUBE_CONFIG=/opt/config
+
+config
+=================
+Clustor(S)
+	clustor1	- https://172.31.22.124:6443
+	clustor2	- https://172.31.22.125:6443
+	clustor3	- https://172.31.22.126:6443
+USER(S)
+	user1	- cert 
+	user2   - cert 
+	user3   - cert 
+Context(S)
+	Context 1 = clustor1 + user3
+	Context 2 = clustor2 + user2   
+	Context 3 = clustor3 + user1
+curr-context =   Context 1 or Context 2 or Context 3	
+
+
+worker
+13.233.131.76
+
+=============================================
+What is Kubernetes?
+Why Kubernetes??
+How Kubernetes? works? architecture
+===============
+workflow in Kubernetes??
+Resources of Kubernetes for YAML/Json
+Setting up a Kubernetes?
+		Master
+		Workstation
+		worker
+
+
+
+
+
+
+
+
+
+
+
+
