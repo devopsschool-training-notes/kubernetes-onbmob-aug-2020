@@ -175,6 +175,150 @@ Mahabaleshwara Bairi	13.235.75.41
 Priyadharshini	13.232.81.22
 Alfonso Lazaro	13.233.15.221
 Gopinath.P	15.206.203.126
+==========================================================
+
+HEALTH - 
+
+
+How many total number of API obejct?
+===================================
+
+ [centos@ip-172-31-22-124 ~]$ kubectl  api-resources
+NAME                              SHORTNAMES   APIGROUP                       NAMESPACED   KIND
+bindings                                                                      true         Binding
+componentstatuses                 cs                                          false        ComponentStatus
+configmaps                        cm                                          true         ConfigMap
+endpoints                         ep                                          true         Endpoints
+events                            ev                                          true         Event
+limitranges                       limits                                      true         LimitRange
+namespaces                        ns                                          false        Namespace
+nodes                             no                                          false        Node
+persistentvolumeclaims            pvc                                         true         PersistentVolumeClaim
+persistentvolumes                 pv                                          false        PersistentVolume
+pods                              po                                          true         Pod
+podtemplates                                                                  true         PodTemplate
+replicationcontrollers            rc                                          true         ReplicationController
+resourcequotas                    quota                                       true         ResourceQuota
+secrets                                                                       true         Secret
+serviceaccounts                   sa                                          true         ServiceAccount
+services                          svc                                         true         Service
+mutatingwebhookconfigurations                  admissionregistration.k8s.io   false        MutatingWebhookConfiguration
+validatingwebhookconfigurations                admissionregistration.k8s.io   false        ValidatingWebhookConfiguration
+customresourcedefinitions         crd,crds     apiextensions.k8s.io           false        CustomResourceDefinition
+apiservices                                    apiregistration.k8s.io         false        APIService
+controllerrevisions                            apps                           true         ControllerRevision
+daemonsets                        ds           apps                           true         DaemonSet
+deployments                       deploy       apps                           true         Deployment
+replicasets                       rs           apps                           true         ReplicaSet
+statefulsets                      sts          apps                           true         StatefulSet
+tokenreviews                                   authentication.k8s.io          false        TokenReview
+localsubjectaccessreviews                      authorization.k8s.io           true         LocalSubjectAccessReview
+selfsubjectaccessreviews                       authorization.k8s.io           false        SelfSubjectAccessReview
+selfsubjectrulesreviews                        authorization.k8s.io           false        SelfSubjectRulesReview
+subjectaccessreviews                           authorization.k8s.io           false        SubjectAccessReview
+horizontalpodautoscalers          hpa          autoscaling                    true         HorizontalPodAutoscaler
+cronjobs                          cj           batch                          true         CronJob
+jobs                                           batch                          true         Job
+certificatesigningrequests        csr          certificates.k8s.io            false        CertificateSigningRequest
+leases                                         coordination.k8s.io            true         Lease
+endpointslices                                 discovery.k8s.io               true         EndpointSlice
+events                            ev           events.k8s.io                  true         Event
+ingresses                         ing          extensions                     true         Ingress
+ingressclasses                                 networking.k8s.io              false        IngressClass
+ingresses                         ing          networking.k8s.io              true         Ingress
+networkpolicies                   netpol       networking.k8s.io              true         NetworkPolicy
+runtimeclasses                                 node.k8s.io                    false        RuntimeClass
+poddisruptionbudgets              pdb          policy                         true         PodDisruptionBudget
+podsecuritypolicies               psp          policy                         false        PodSecurityPolicy
+clusterrolebindings                            rbac.authorization.k8s.io      false        ClusterRoleBinding
+clusterroles                                   rbac.authorization.k8s.io      false        ClusterRole
+rolebindings                                   rbac.authorization.k8s.io      true         RoleBinding
+roles                                          rbac.authorization.k8s.io      true         Role
+priorityclasses                   pc           scheduling.k8s.io              false        PriorityClass
+csidrivers                                     storage.k8s.io                 false        CSIDriver
+csinodes                                       storage.k8s.io                 false        CSINode
+storageclasses                    sc           storage.k8s.io                 false        StorageClass
+volumeattachments                              storage.k8s.io                 false        VolumeAttachment
+
+
+36  kubectl  api-resources
+
+
+====================
+KIND
+GROUP
+Version
+====================
+OPS with Microservcies??
+=========================
+	CRUD for ALL API resources.
+
+	CREATE
+		CMD
+			create 
+		YAML
+			create
+	READ
+		CMD
+			get
+	UPDATE
+		CMD
+			edit
+			apply
+		YAML
+			apply
+	DELETE
+		CMD
+			delete
+		YAML
+			delete
+
+===================================================
+
+kubectl get ns
+kubectl get pods
+kubectl get rc
+kubectl get deploy
+kubectl get nodes
+
+kubectl create ns dev
+kubectl create ns qa
+
+kubectl get ns
+
+kubectl edit ns dev
+kubectl edit ns qa
+
+kubectl delete ns dev
+kubectl delete ns qa
+
+
+
+ 51  kubectl get ns
+   52  kubectl get pods
+   53  kubectl get pods -n=kube-system
+   54  clear
+   55  kubectl get pods -n=kube-system
+   56  clear
+   57  kubectl get pods --all-namespaces
+   58  clear
+   59  kubectl get rc
+   60  kubectl get deploy
+   61  kubectl get nodes
+   62  clear
+   63  kubectl create ns dev
+   64  kubectl create ns qa
+   65  kubectl get ns
+   66  kubectl edit ns dev
+   67  kubectl delete ns dev
+   68  kubectl get ns
+   69  history
+
+
+
+
+
+
 
 
 
