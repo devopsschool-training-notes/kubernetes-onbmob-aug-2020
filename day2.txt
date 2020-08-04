@@ -136,11 +136,71 @@ How do we know all the fields of each API resources?
   243  history
 
 
+==============
+worker 2 - 52.66.209.249
+Worker 3 - 35.154.142.106
+===================================================
+ReplicationController
+===================================================
+Replication - Replicate Ond Pod to Many
+Controller - Make sure that number of Pods are in place as desired.
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: hello-rc
+spec:
+  replicas: 2   
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-ctr
+        image: scmgalaxy/nginx-devopsschoolv1
+        ports:
+        - containerPort: 80
 
 
+  634  kubectl get pods
+  635  kubectl get rc -n=rajesh
+  636  kubectl create -f rc.yaml -n=rajesh
+  637  kubectl get rc -n=rajesh
+  638  kubectl get pod -n=rajesh
+  639  clear
+  640  kubectl edit rc hello-rc -n=rajesh
+  641  kubectl get pod -n=rajesh
+  642  clear
+  643  kubectl get pod -n=rajesh
+  644  clear
+  645  kubectl get pod -n=rajesh
+  646  ls
+  647  vi rc.yaml
+  648  kubectl apply -f rc.yaml -n=rajesh
+  649  clear
+  650  kubectl get pod -n=rajesh
+  651  vi rc.yaml
+  652  clear
+  653  kubectl get pod -n=rajesh
+  654  kubectl get pod -n=rajesh -o wide
+  655  clear
+  656  ls
+  657  kubectl get pod -n=rajesh -o wide
+  658  kubectl get pod -n=rajesh
+  659  clear
+  660  kubectl get pod -n=rajesh
+  661  kubectl delete pod hello-rc-gdknt -n=rajesh
+  662  kubectl get pod -n=rajesh
+  663  clear
+  664  ls
+  665  kubectl delete -f rc.yaml -n=rajesh
+  666  kubectl get pod -n=rajesh
 
 
-
+===================================================
+Deployment
+===================================================
 
 
 
