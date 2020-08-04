@@ -249,6 +249,158 @@ work with rs.
  1011  curl http://10.47.0.8
  1012  kubectl rollout history deployment my-dep -n=rajesh
  1013  history
+=======================================================================
+
+
+
+kubectl rollout status deploy/my-dep
+kubectl rollout undo deploy/my-dep --to-revision=3
+kubectl rollout status deploy/my-dep
+
+
+RollingUpdateStrategy:  5 max unavailable, 5 max surge
+
+kubectl explain deploy.spec.strategy
+
+
+1011  clear
+ 1012  kubectl explain deploy.spec
+ 1013  kubectl explain deploy.spec.strategy
+ 1014  kubectl explain deploy.spec.strategy.rollingUpdate
+
+
+kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 -n=rajesh
+kubectl rollout status deploy/my-dep -n=rajesh
+kubectl scale --replicas=20 deployment/my-dep -n=rajesh
+kubectl rollout status deploy/my-dep -n=rajesh
+kubectl edit deployment my-dep -n=rajesh
+kubectl rollout status deploy/my-dep -n=rajesh
+
+kubectl rollout history deployment my-dep -n=rajesh
+kubectl rollout undo deploy/my-dep --to-revision=2 -n=rajesh
+kubectl rollout status deploy/my-dep -n=rajesh
+
+
+1042  kubectl get deploy -n=rajesh
+ 1043  kubectl get deploy my-dep -n=rajesh
+ 1044  kubectl get deploy my-dep -n=rajesh -o yaml
+ 1045  kubectl get deploy my-dep -n=rajesh -o yaml --export
+ 1046  clear
+ 1047  kubectl get deploy my-dep -n=rajesh -o yaml --export >> dep.yaml
+ 1048  ls
+ 1049  more dep.yaml
+ 1050  clear
+ 1051  more dep.yaml
+ 1052  kubectl delete deploy my-dep -n=rajesh
+ 1053  clear
+ 1054  ls
+ 1055  kubectl apply -f dep.yaml -n=rajesh
+ 1056  kubectl get deploy my-dep -n=rajesh
+===============================================================
+
+clusterip - it create a service loadbalancing a Pod on POD network.
+nodeport - It create a service of clusterip  && expose that service to Node Port.
+loadbalancer - Create one ClustorIP service --> exposed atg Node Port --> Node get Balance by Ext LB.
+
+kubectl create service clusterip my-cs --tcp=8080:80
+=============================================
+
+
+if lables of POD is matching with a labels of Svc --- Auto Pods get updated to service. -- wrong.
+if lables of POD is matching with a selector label of Svc --- Auto Pods get updated to service. -- right
+
+972  kubectl rollout history deployment my-dep -n=rajesh
+  973  history
+  974  clear
+  975  kubectl create deployment maha-dep --image=scmgalaxy/nginx-devopsschoolv1 -n=maha
+  976  ubectl get deploy -n=maha
+  977  kubectl get deploy -n=maha
+  978  kubectl get pods -n=maha
+  979  kubectl scale --replicas=10 deployment/maha-dep -n=maha
+  980  kubectl get pods -n=maha
+  981  kubectl get pods -n=maha -o wide
+  982  kubectl get deploy -n=rmaha
+  983  kubectl get deploy -n=maha
+  984  kubectl scale --replicas=2 deployment/maha-dep -n=maha
+  985  kubectl get deploy -n=maha
+  986  kubectl get pods -n=maha -o wide
+  987  curl 'http://10.44.0.14'
+  988  kubectl edit deploy maha-dep -n=maha
+  989  kubectl get pods -n=maha -o wide
+  990  curl 'http://10.44.0.14'
+  991  kubectl get pods -n=maha -o wide
+  992  curl 'http://10.44.0.14'
+  993  kubectl get pods -n=maha -o wide
+  994  kubectl rollout history deployment maha-dep -n=maha
+  995  kubectl describe deploy  maha-dep -n=maha
+  996  kubectl get deploy -n=maha
+  997  clear
+  998  ls
+  999  kubectl get svc
+ 1000  kubectl get svc -n=rajesh
+ 1001  kubectl create svc -h
+ 1002  kubectl create svc clusterip -h
+ 1003  clear
+ 1004  kubectl create service clusterip my-cs --tcp=8080:80 -n-rajesh
+ 1005  kubectl create service clusterip my-cs --tcp=8080:80 -n=rajesh
+ 1006  kubectl get svc -n=rajesh
+ 1007  kubectl describe svc my-cs -n=rajesh
+ 1008  kubectl describe svc my-cs -n=rajesh --show-labels
+ 1009  kubectl describe svc my-cs -n=rajesh --show-label
+ 1010  kubectl describe svc my-cs -n=rajesh --show-lables
+ 1011  clear
+ 1012  kubectl describe svc my-cs -n=rajesh --show-labels
+ 1013  kubectl get svc -n=rajesh --show-lables
+ 1014  kubectl get svc -n=rajesh --show-labels
+ 1015  kubectl get pods -n=rajesh
+ 1016  kubectl delete deploy -n=rajesh my-dep
+ 1017  ckclear
+ 1018  clear
+ 1019  kubectl get pods -n=rajesh
+ 1020  clear
+ 1021  s
+ 1022  ls
+ 1023  cd kubernetes-onbmob-aug-2020/
+ 1024  cd rajesh/
+ 1025  ls
+ 1026  clear
+ 1027  ls
+ 1028  kubectl create -f pod1.yaml -n=rajesh
+ 1029  kubectl get pods -n=rajesh
+ 1030  kubectl get pods -n=rajesh --show-labels
+ 1031  kubectl get svc -n=rajesh --show-labels
+ 1032  kubectl describe svc my-cs -n=rajesh
+ 1033  vi pod1.yaml
+ 1034  clear
+ 1035  kubectl apply -f pod1.yaml -n=rajesh
+ 1036  kubectl get pods -n=rajesh --show-labels
+ 1037  kubectl describe svc my-cs -n=rajesh
+ 1038  kubectl get svc -n=rajesh --show-labels
+ 1039  vi pod1.yaml
+ 1040  kubectl get pods -n=rajesh --show-labels
+ 1041  kubectl get pods -n=rajesh -o wide
+ 1042  curl http://10.42.0.39
+ 1043  kubectl get svc -n=rajesh --show-labels
+ 1044  curl http://10.111.112.96
+ 1045  curl http://10.111.112.96:8080
+ 1046  clear
+ 1047  ls
+ 1048  kubectl get svc -n=rajesh --show-labels
+ 1049  kubectl describe svc my-cs -n=rajesh
+ 1050  kubectl edit svc my-cs -n=rajesh
+ 1051  curl http://10.111.112.96:8080
+ 1052  ls
+ 1053  vi pod1.yaml
+ 1054  kubectl create -f pod1.yaml
+ 1055  clear
+ 1056  kubectl create -f pod1.yaml -n=rajesh
+ 1057  kubectl get pods -n=rajesh
+ 1058  kubectl get pods -n=rajesh --show-labels
+ 1059  kubectl describe svc my-cs -n=rajesh
+ 1060  kubectl edit svc my-cs -n=rajesh
+ 1061  kubectl describe svc my-cs -n=rajesh
+ 1062  curl http://10.111.112.96:8080
+ 1063  history
 
 
 
