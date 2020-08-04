@@ -201,8 +201,54 @@ spec:
 ===================================================
 Deployment
 ===================================================
+Replication	BUG++ fixed 	
+Controller	BUG++ fixed 	ReplicaSets
+Versioning	Automatic	
+Rollout
+rollback
+================================
+kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 -n=rajesh
+1008  kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 -n=rajesh
+ 1009  kubectl get deploy -n=rajesh
+ 1010  kubectl get pod -n=rajesh
+ 1011  kubectl delete rc hello-rc
+ 1012  kubectl delete rc hello-rc -n=rajesh
+ 1013  clear
+ 1014  kubectl delete pod hello-pod -n=rajesh
+ 1015  kubectl get pod -n=rajesh
+ 1016  kubectl delete pod hello-pod-rajesh -n=rajesh
+ 1017  kubectl get pod -n=rajesh
+ 1018  kubectl get deploy -n=rajesh
+ 1019  kubectl edit deploy my-dep -n=rajesh
+ 1020  kubectl
+ 1021  clear
+ 1022  kubectl scale -h
+ 1023  clear
+ 1024  kubectl scale --replicas=10 deployment/my-dep -n=rajesh
+ 1025  kubectl get deploy -n=rajesh
+ 1026  kubectl get pod -n=rajesh
+ 1027  kubectl scale --replicas=2 deployment/my-dep -n=rajesh
+ 1028  kubectl get deploy -n=rajesh
 
 
+-----
+work with rs.
+----
+
+ 1000  kuebctl get pod -n=rajesh
+ 1001  kubectl get pod -n=rajesh
+ 1002  kubectl get pod -n=rajesh -o wide
+ 1003  curl http://10.47.0.8
+ 1004  clear
+ 1005  kubectl get deploy -n=rajesh
+ 1006  kubectl edit deploy my-dep -n=rajesh
+ 1007  kubectl get pod -n=rajesh -o wide
+ 1008  clear
+ 1009  kubectl get pod -n=rajesh
+ 1010  kubectl get pod -n=rajesh -o wide
+ 1011  curl http://10.47.0.8
+ 1012  kubectl rollout history deployment my-dep -n=rajesh
+ 1013  history
 
 
 
