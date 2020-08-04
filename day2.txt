@@ -1,0 +1,149 @@
+WORKSTATION - 13.234.115.161
+=================================
+
+
+
+
+	CRUD for ALL API resources.
+
+	CREATE
+		CMD
+			create 
+		YAML
+			create
+	READ
+		CMD
+			get
+			describe
+	UPDATE
+		CMD
+			edit
+		YAML
+			apply
+	DELETE
+		CMD
+			delete
+		YAML
+			delete
+================================================
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod-rajesh
+  labels: 
+    app: webserver
+spec:
+  containers:
+  - name: hello-ctr
+    image: nginx
+    ports:
+    - containerPort: 80
+
+
+146  kubectl create -h
+  147  c
+  148  clear
+  149  kubectl
+  150  kubectl api-resources
+  151  clear
+  152  kubectl api-versions
+  153  clear
+  154  ls
+  155  vi pod1.yaml
+  156  kubeclt create -f pod1.yaml
+  157  kubectl create -f pod1.yaml
+  158  kubectl get pods
+  159  clear
+  160  ls
+  161  kubectl get pods
+  162  kubectl create -f pod1.yaml
+  163* kubectl get ns -n=qa
+  164  kubectl create -f pod1.yaml -n=qa
+  165  kubectl get pods --all-namespaces
+  166  clear
+  167  ls
+  168  clear
+  169  ls
+  170  kubectl get pods -n=qa
+  171  kubectl edit pod hello-pod-rajesh -n=qa
+  172  ls
+  173  kubectl get pods -n=qa
+  174  kubectl describe pod hello-pod-rajesh -n=qa
+  175  clear
+  176  vi pod1.yaml
+  177  kubectl apply -f pod1.yaml
+  178  kubectl apply -f pod1.yaml -n=qa
+  179  kubectl describe pod hello-pod-rajesh -n=qa
+  180  clear
+  181  ls
+  182  kubectl get pods
+  183  kubectl delete pod hello-pod-rajesh
+  184  kubectl get pods
+  185  kubectl delete -f pod1.yaml -n=qa
+  186  history
+=============================
+How can we use pod?
+=============================
+1. You go inside a pod(Container) 
+exec
+attach
+ 190  kubectl get pods -n=qa
+  191  kubectl create -f pod1.yaml -n=qa
+  192  kubectl exec -it hello-pod-rajesh /bin/bash
+  193  kubectl exec -it hello-pod-rajesh /bin/bash -n=qa
+  194  clear
+  195  kubectl get pods -n=qa
+  196  kubectl get pods -n=qa -o wide
+  197  kubectl attach hello-pod-rajesh
+  198  kubectl attach hello-pod-rajesh -n=qa
+  199  clear
+
+logs && CP
+  203  kubectl logs hello-pod-rajesh -n=qa
+  204  clear
+  205  kubectl logs hello-pod-rajesh -n=qa
+  215  kubectl cp pod1.yaml hello-pod-rajesh:/tmp
+  216  kubectl cp pod1.yaml hello-pod-rajesh:/tmp -n=qa
+  217  kubectl exec hello-pod-rajesh ls /tmp/
+  218  kubectl exec hello-pod-rajesh ls /tmp/ -n=qa
+
+
+
+2. Access app from outside?
+ 223  clear
+  224  kubectl describe pod hello-pod-rajesh -n=qa
+  225  clear
+  226  kubectl get pods -n=qa -o wide
+  227  curl http://10.44.0.2
+  228  clear
+  229  ls
+
+
+
+How do we know all the fields of each API resources?
+========================================================
+
+ 234  kubectl
+  235  clear
+  236  kubectl explain pod
+  237  kubectl explain pod.spec
+  238  kubectl explain pod.spec.containers
+  239  clear
+  240  kubectl explain ns
+  241  kubectl explain ns.spec
+  242  kubectl explain ns.spec.finalizers
+  243  history
+
+
+
+
+
+
+
+
+
+
+
+
+
