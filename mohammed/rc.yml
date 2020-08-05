@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: rc-asif
+spec:
+  replicas: 5   
+  template:
+    metadata:
+      labels:
+        app: rc-asif-new
+    spec:
+      containers:
+      - name: contnr-asif
+        image: scmgalaxy/nginx-devopsschoolv1
+        ports:
+        - containerPort: 80

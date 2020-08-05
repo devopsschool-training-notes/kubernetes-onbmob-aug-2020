@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-satheesh
+  labels: 
+    app: webserver1
+spec:
+  containers:
+  - name: hello-pod1
+    image: nginx
+    ports:
+    - containerPort: 80

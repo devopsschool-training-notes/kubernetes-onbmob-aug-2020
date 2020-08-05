@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: manohar-pod-lb-2
+  labels: 
+    app: my-lbs
+spec:
+  containers:
+  - name: nginx-container-2
+    image: scmgalaxy/nginx-devopsschoolv1
+    ports:
+    - containerPort: 80

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: priya
+  labels: 
+    app: priya-svc
+spec:
+  containers:
+  - name: hello-priya
+    image: nginx
+    ports:
+    - containerPort: 80

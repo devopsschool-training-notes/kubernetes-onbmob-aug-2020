@@ -1,0 +1,64 @@
+kubectl create ns shantha # Creating a namespace with name shantha
+ 131  kubectl create ns shantha
+  132  kubectl get ns
+  133  kubectl edit ns shantha
+  134  ls
+  135  touch pod1.yaml
+  136  vim pod1.yaml
+  137  kubectl create -f pod1.yaml -n=shantha
+  138  kubectl get pods --all-namespaces
+  139  kubectl get pods
+  140  kubectl get pods -n=shantha
+  141*
+  142  ls
+  143  vim commands.txt
+  144  kubectl get pods -n=shantha
+  145  kubectl edit pod hello-pod-shantha -n=shantha
+  146  kubectl get pods -n=shantha -o wide
+  147  kubectl describe pods hello-pod-shantha
+  148  kubectl describe pods hello-pod-shantha -n=shantha
+  149  ls
+  150  vim pod1.yaml
+  151  ls
+  152  pwd
+  153  ls
+  154  cd .
+  155  cd ../
+  156  ls
+  157  cd -
+  158  ls
+  159  cd ../
+  160  ls
+  161  ls -lrth
+  162  cd shantha/
+  163  ls
+  164  cd ../
+  165  ls
+  166  cd shantha/
+  167  ls
+  168  vim pod1.yaml
+  169*
+  170  kubectl describe pods hello-pod-shantha -n=shantha
+  171  kubectl describe pods
+  172  kubectl get pods
+  173  kubectl
+  174  kubectl delete
+  175  kubectl get pods
+  176  kubectl delete pod hello-pod-shantha
+  177  kubectl apply -f pod1.yaml -n=shantha
+  178  kubectl get pods -n=shantha
+  179  kubectl exec -it hello-pod-shantha /bin/bash
+  180  kubectl exec -it hello-pod-shantha /bin/bash -n=shantha
+  181  ls
+  182  vim pod1.yaml
+  183  kubectl apply -f pod1.yaml -n=shantha
+  184  kubectl get pods -n=shantha
+  185  kubectl describe pods -n=shantha
+  186  vim pod1.yaml
+  187  kubectl get pods -n=shantha -o wid
+  188  kubectl get pods -n=shantha -o wide
+  189  kubectl attach hello-pod-shantha -n=shantha
+  190  kubectl logs hello-pod-shantha -n=shantha
+  192  kubectl cp pod1.yaml hello-pod-shantha:/var/tmp -n=shantha
+  193  kubectl exec -it hello-pod-shantha /bin/bash -n=shantha
+

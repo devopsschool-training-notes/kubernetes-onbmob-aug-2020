@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-girish
+  labels: 
+    app: testing
+spec:
+  containers:
+  - name: nginx-ctr
+    image: nginx
+    ports:
+    - containerPort: 80

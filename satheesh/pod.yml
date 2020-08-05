@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sat-nginx2
+  labels:  
+    app: sat-nginx
+spec:
+  containers:
+  - name: hellow-pod3
+    image: nginx
+    ports:
+    - containerPort: 80

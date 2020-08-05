@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-nginx-lbs-2
+  labels: 
+    app: sha-lbs
+spec:
+  containers:
+  - name: pod2
+    image: scmgalaxy/nginx-devopsschoolv2
+    ports:
+    - containerPort: 80

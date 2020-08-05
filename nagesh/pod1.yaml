@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nagesh-pod
+  labels: 
+    app: webserver
+spec:
+  containers:
+  - name: ctr-nagesh
+    image: nginx
+    ports:
+    - containerPort: 80

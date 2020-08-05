@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod-mukundhar
+  labels: 
+    app: webproxy
+spec:
+  containers:
+  - name: hello-mukund
+    image: nginx
+    ports:
+    - containerPort: 80

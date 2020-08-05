@@ -1,0 +1,1 @@
+kubectl create ns srinath # Creating a namespace with name srinath

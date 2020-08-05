@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod-as3
+  labels: 
+    app: webserver3
+spec:
+  containers:
+  - name: hello-pod2
+    image: nginx
+    ports:
+    - containerPort: 80

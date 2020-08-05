@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: deployment
+metadata:
+  name: my-dep
+  labels:
+    app: sat-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sat-nginx
+  template:
+    metadata:
+      labels:
+        app: sat-nginx
+    spec:
+      containers:
+        - name: webserver1
+          image: scmgalaxy/nginx-devopsschoolv1
+          ports:
+            - containerPort: 80

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: asif4
+  labels: 
+    app: test
+spec:
+  containers:
+  - name: hello-ctr-test
+    image: nginx:latest
+    ports:
+    - containerPort: 80
