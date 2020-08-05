@@ -3,10 +3,9 @@ Workstation
 52.66.202.153
 ==============================
 
-http://52.66.202.153:31538/
-http://13.234.118.98:31538/
-http://15.207.16.69:31538/
-http://52.66.201.177:31538/
+http://52.66.202.153:31538/	172.31.22.124
+http://13.234.118.98:31538/	172.31.16.11
+http://52.66.201.177:31538/	172.31.18.137
 
 
 What is service?
@@ -93,7 +92,304 @@ spec:
     hostPath:
       path: /data
       type: DirectoryOrCreate
+==========================================================
+nfs
+=================
+nfs
+https://www.devopsschool.com/blog/setup-nfs-server-and-use-inside-a-kubernetes-pods-in-rhel-centos7/
 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: null
+  generation: 1
+  labels:
+    app: my-dep
+  name: my-dep1
+  selfLink: /apis/apps/v1/namespaces/default/deployments/my-dep
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 30
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: my-dep
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: my-dep
+    spec:
+      containers:
+      - image: scmgalaxy/nginx-devopsschoolv2
+        imagePullPolicy: Always
+        name: nginx-devopsschoolv1
+        volumeMounts:
+        - mountPath: /test-pd
+          name: test-volume
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      volumes:
+      - name: test-volume
+        nfs:
+          server: 172.31.18.137
+          path: /tecnotree
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}
+
+
+
+configmap
+=============================
+https://www.devopsschool.com/blog/kubernetes-configmap-explained-using-example/
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: helloworld-nginx
+  labels:
+    app: helloworld-nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.11
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/nginx/conf.d
+  - name: k8s-demo
+    image: wardviaene/k8s-demo
+    ports:
+    - containerPort: 3000
+  volumes:
+    - name: config-volume
+      configMap:
+        name: my-config
+        items:
+        - key: reverseproxy.conf
+          path: myconfo.conf
+
+secret
+===============
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+type: Opaque
+data:
+  username: YWRtaW4=
+  password: MWYyZDFlMmU2N2Rm
+
+admin
+1f2d1e2e67df	1f2d1e2e67df
+
+
+echo  '1f2d1e2e67df' | base64
+
+echo 'MWYyZDFlMmU2N2Rm' | base64 --decode
+echo 'YWRtaW4=' | base64 --decode
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypodsecret
+spec:
+  containers:
+  - name: mypod
+    image: scmgalaxy/nginx-devopsschoolv1
+    volumeMounts:
+    - name: foo
+      mountPath: "/etc/foo"
+      readOnly: true
+  volumes:
+  - name: foo
+    secret:
+      secretName: mysecret
+
+=================================================
+aws -> 
+	ebs
+
+LOCAL 
+https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/
+https://www.tutorialspoint.com/kubernetes/kubernetes_volumes.htm
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: helloworld-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: k8s-demo
+        image: wardviaene/k8s-demo
+        ports:
+        - name: nodejs-port
+          containerPort: 3000
+        volumeMounts:
+        - mountPath: /myvol
+          name: myvolume
+      volumes:
+      - name: myvolume
+        awsElasticBlockStore:
+          volumeID: # insert AWS EBS volumeID here
+
+
+EFS
+==================
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: wordpress-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+      - name: wordpress
+        image: wordpress:4-php7.0
+        # uncomment to fix perm issue, see also https://github.com/kubernetes/kubernetes/issues/2630
+        # command: ['bash', '-c', 'chown www-data:www-data /var/www/html/wp-content/uploads && apache2-foreground']
+        ports:
+        - name: http-port
+          containerPort: 80
+        env:
+          - name: WORDPRESS_DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: wordpress-secrets
+                key: db-password
+          - name: WORDPRESS_AUTH_KEY
+            valueFrom:
+              secretKeyRef:
+                name: wordpress-secrets
+                key: authkey
+          - name: WORDPRESS_LOGGED_IN_KEY
+            valueFrom:
+              secretKeyRef:
+                name: wordpress-secrets
+                key: loggedinkey
+          - name: WORDPRESS_SECURE_AUTH_KEY
+            valueFrom:
+              secretKeyRef:
+                name: wordpress-secrets
+                key: secureauthkey
+          - name: WORDPRESS_NONCE_KEY
+            valueFrom:
+              secretKeyRef:
+                name: wordpress-secrets
+                key: noncekey
+          - name: WORDPRESS_AUTH_SALT
+            valueFrom:
+              secretKeyRef:
+                name: wordpress-secrets
+                key: authsalt
+          - name: WORDPRESS_SECURE_AUTH_SALT
+            valueFrom:
+              secretKeyRef:
+                name: wordpress-secrets
+                key: secureauthsalt
+          - name: WORDPRESS_LOGGED_IN_SALT
+            valueFrom:
+              secretKeyRef:
+                name: wordpress-secrets
+                key: loggedinsalt
+          - name: WORDPRESS_NONCE_SALT
+            valueFrom:
+              secretKeyRef:
+                name: wordpress-secrets
+                key: noncesalt
+          - name: WORDPRESS_DB_HOST
+            value: wordpress-db
+        volumeMounts:
+        - mountPath: /var/www/html/wp-content/uploads
+          name: uploads
+      volumes:
+      - name: uploads
+        nfs:
+          server: us-west-2a.fs-dd6d1c74.efs.us-west-2.amazonaws.com
+          path: /
+
+==================================================
+
+pv - persistant volume - admin
+	ebs - not
+	efs - not
+	nfs 
+	hostpath
+https://www.devopsschool.com/blog/kubernetes-persistentvolume-and-persistentvolumeclaim-using-nfs-volume-types/
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv0002
+spec:
+  capacity:
+    storage: 5Gi 
+  accessModes:
+  - ReadWriteOnce 
+  nfs: 
+    path: /tecnotree
+    server: 172.31.18.137
+  persistentVolumeReclaimPolicy: Recycle
+
+
+
+pvc - by user	
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-claim1
+spec:
+  accessModes:
+    - ReadWriteOnce 
+  resources:
+    requests:
+      storage: 3Gi 
+
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: task-pv-pod1
+spec:
+  containers:
+    - name: task-pv-container
+      image: scmgalaxy/nginx-devopsschoolv1
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: task-pv-storage
+  volumes:
+    - name: task-pv-storage
+      persistentVolumeClaim:
+        claimName: nfs-claim1
 
 
 
