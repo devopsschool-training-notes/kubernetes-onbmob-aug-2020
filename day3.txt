@@ -1,0 +1,34 @@
+Workstation
+================
+52.66.202.153
+==============================
+
+http://52.66.202.153:31538/
+http://13.234.118.98:31538/
+http://15.207.16.69:31538/
+http://52.66.201.177:31538/
+
+
+What is service?
+	Loadbalancing POD.
+
+How?
+	Using Label.
+	-------------
+	Labels of POD must match with selctor of Service...Auto Pods get loadbalanced by service using 
+	Service Discovery - CoreDNS.
+==========================
+Types of service
+----------------------
+ClustorIP - This service would get IP range of POD netowrk and LB pods.
+NodePort - This would create ClustorIP svc and exposed to One Port of the Node.
+LoadBalancer - This would create NodePort and create a ext LoadBalancer and Add all Clustor Node into Ext LB
+
+
+NodePort
+=============
+kubectl create service nodeport my-ns --tcp=8080:80
+kubectl create service loadbalancer my-lbs --tcp=8080:80
+
+onmob.freeebooks.xyz
+
