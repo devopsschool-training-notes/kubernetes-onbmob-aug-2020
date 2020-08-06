@@ -1,0 +1,178 @@
+52.66.202.153
+centos
+
+=====DAY 4 =======
+StatefulSet
+DeamonSets
+HPA
+RBAC = Authen & Auth
+Networking
+Job
+CronJob
+
+
+======
+POD Obserbability - CONDITIONAL
+	toler
+Ingress - CONDITIONAL
+
+	--
+	--
+	--
+	--
+
+Day 5
+=====================
+Node Maintainance
+	taint
+
+Clustor backup and Restore
+Clustor Upgarde
+Clustor HA
+	Cross Hybrid Cloud - Discussion 
+Network Policy
+-----------------
+Monitoring 
+	Log
+	pod
+	container
+------------
+EKS Setup
+====================
+K8s with windows - Demo only
+
+LDAP
+====
+================================================
+================================================
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv0003
+spec:
+  capacity:
+    storage: 1Gi 
+  accessModes:
+  - ReadWriteOnce 
+  nfs: 
+    path: /tecnotree/pv0003
+    server: 172.31.18.137 
+  persistentVolumeReclaimPolicy: Recycle
+
+
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv0004
+spec:
+  capacity:
+    storage: 1Gi 
+  accessModes:
+  - ReadWriteOnce 
+  nfs: 
+    path: /tecnotree/pv0004
+    server: 172.31.18.137 
+  persistentVolumeReclaimPolicy: Recycle
+
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  serviceName: "nginx"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: k8s.gcr.io/nginx-slim:0.8
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
+
+====================
+Create in order
+Delete in order
+PV required
+pV sticky
+======================
+
+
+DaemonSet
+==========================
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fluentd-elasticsearch
+  namespace: kube-system
+  labels:
+    k8s-app: fluentd-logging
+spec:
+  selector:
+    matchLabels:
+      name: fluentd-elasticsearch
+  template:
+    metadata:
+      labels:
+        name: fluentd-elasticsearch
+    spec:
+      tolerations:
+      # this toleration is to have the daemonset runnable on master nodes
+      # remove it if your masters can't run pods
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      containers:
+      - name: fluentd-elasticsearch
+        image: quay.io/fluentd_elasticsearch/fluentd:v2.5.2
+        resources:
+          limits:
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+        - name: varlibdockercontainers
+          mountPath: /var/lib/docker/containers
+          readOnly: true
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: varlog
+        hostPath:
+          path: /var/log
+      - name: varlibdockercontainers
+        hostPath:
+          path: /var/lib/docker/containers
+
+
+
+
+
+
+
+
+
+
+
+
