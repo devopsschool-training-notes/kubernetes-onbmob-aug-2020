@@ -281,8 +281,135 @@ openssl req -new -key employee.key -out employee.csr -subj "/CN=employee/O=bitna
 openssl x509 -req -in employee.csr -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out /home/ec2-user/tecnotree/employee.crt -days 500
 
 ======USER At LAPTOP==================
-kubectl config set-credentials employee --client-certificate=/home/ec2-user/tecnotree/employee.crt  --client-key=/home/ec2-user/tecnotree/employee.key
+kubectl config set-credentials employee --client-certificate=/home/centos/kubernetes-onbmob-aug-2020/rajesh/auth/employee.crt  --client-key=/home/centos/kubernetes-onbmob-aug-2020/rajesh/auth/employee.key
 
 kubectl config set-context employee-context --cluster=kubernetes --namespace=office --user=employee
 
 kubectl --context=employee-context get pods
+
+============================================================================
+ABAC
+=======
+RBAC	
+https://kubernetes.io/docs/reference/access-authn-authz/authorization/
+======================================
+
+
+USER
+	NORMAL - ME/YOU	= NO API
+	SERVICE ACCOUNT = API
+
+ROLE
+	Role	= Namespace
+	ClustorRole = Clustorwide
+======================================
+How can we add NUSER/SERVICE ACCOUNT to Role/ClustorRole???
+	RoleBinding
+	ClustorRoleBinding 	
+
+=======================================
+
+
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  namespace: rajesh
+  name: deployment-manager
+rules:
+- apiGroups: ["", "extensions", "apps"]
+  resources: ["deployments", "replicasets", "pods"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"] # You can also use ["*"]
+
+
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: deployment-manager-binding
+  namespace: rajesh
+subjects:
+- kind: User
+  name: employee
+  apiGroup: ""
+roleRef:
+  kind: Role
+  name: deployment-manager
+  apiGroup: ""
+=========================================================
+
+============================
+$ kubectl --context=employee-context run nginx --image=nginx
+$ kubectl --context=employee-context get pods
+
+
+
+kubectl create sa tecnotree-sa
+kubectl get sa -A | grep tec
+
+sa.yaml
+---------------
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tecnotree-admin
+
+kubectl create -f sa.yaml
+kubectl get sa -A | grep tec
+kubectl get secrets
+
+
+
+
+
+kubectl help create clusterrole
+kubectl create clusterrole tecnotree-clusterroles1 --verb=get,list,watch --resource=pods
+kubectl get clusterrole
+kubectl describe clusterrole tecnotree-clusterroles1
+
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  namespace: default
+  name: tecnotree-clusterroles2
+rules:
+- apiGroups: ["", "extensions", "apps"]
+  resources: ["deployments", "replicasets", "pods"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"] # You can also use ["*"]
+
+
+
+kubectl create clusterrolebinding tecnotree-cr-binding --clusterrole=tecnotree-clusterroles2 --user=tecnotree-admin
+kubectl get clusterrolebinding
+kubectl get clusterrolebinding | grep tec
+
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: tecnotree-cr-binding3
+subjects:
+- kind: ServiceAccount
+  name: tecnotree-admin
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: tecnotree-clusterroles2
+  apiGroup: rbac.authorization.k8s.io
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: tecnotree-cr-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: tecnotree-clusterroles2
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: tecnotree-admin
+
+
+
+
+
+
