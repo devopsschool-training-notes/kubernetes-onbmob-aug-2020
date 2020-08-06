@@ -1,4 +1,4 @@
-52.66.202.153
+S52.66.202.153
 centos
 
 =====DAY 4 =======
@@ -165,14 +165,124 @@ spec:
         hostPath:
           path: /var/lib/docker/containers
 
+======================================================
+HPA
+=========================================================
+HPA
+============
+Horizontal Pod AutoScalar
+=========================
+Deployment
+	10 PODS
+	----------
+		CPU
+		Memory
+	AVG ALL POD CUP/memory is more than a thresold - 
+				Range
+				10 - 20
+=============================================
+How to monitor and aggregate a Pods/Container CPU/memory?
+Heapster --> merics-server
+https://github.com/kubernetes-sigs/metrics-server
+
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.7/components.yaml
+
+=====Run a deployment with thresold  ===
+---USE apps
+	more than thresold  = Scale up
+	less than thresold  = Scale down
+https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+spec:
+  selector:
+    matchLabels:
+      run: php-apache
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: k8s.gcr.io/hpa-example
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache
+  labels:
+    run: php-apache
+spec:
+  ports:
+  - port: 80
+  selector:
+    run: php-apache
+
+https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#algorithm-details
+
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+
+kubectl run -it --rm load-generator --image=busybox /bin/sh
+
+Hit enter for command prompt
+
+while true; do wget -q -O- http://php-apache; done
+========================
+curl -L https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.6/components.yaml --output components.yaml
+add --kubelet-insecure-tls under args (L88) to the metrics-server deployment and run
+kubectl apply -f components.yaml
+
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.7/components.yaml
+
+curl -L https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.7/components.yaml
+============================================================
+===========================================================
+Authen & Auth
+===================================
+How can we Authenticate Kubernetes?
+====================================
+Password
+Token
+Certificates
+LDAP
+OpenID 
+Webhook
+Authenticating Proxy
+Integrations with other authentication protocols (LDAP, SAML, Kerberos, alternate x509 schemes, etc) can be accomplished using an authenticating proxy or the authentication webhook
+
+https://kubernetes.io/docs/reference/access-authn-authz/authentication/
+
+=============================================
+User and Certificates
+=============================================
 
 
+======USER At LAPTOP==================
+kubectl create namespace office
 
+openssl genrsa -out employee.key 2048
 
+openssl req -new -key employee.key -out employee.csr -subj "/CN=employee/O=bitnami"
 
+======ADMIN AT MASTER using root==================
+openssl x509 -req -in employee.csr -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out /home/ec2-user/tecnotree/employee.crt -days 500
 
+======USER At LAPTOP==================
+kubectl config set-credentials employee --client-certificate=/home/ec2-user/tecnotree/employee.crt  --client-key=/home/ec2-user/tecnotree/employee.key
 
+kubectl config set-context employee-context --cluster=kubernetes --namespace=office --user=employee
 
-
-
-
+kubectl --context=employee-context get pods
