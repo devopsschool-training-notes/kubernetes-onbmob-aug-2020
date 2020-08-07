@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sspv2
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  nfs:
+    path: /tecnotree/sspv2
+    server: 172.31.18.137
+  persistentVolumeReclaimPolicy: Recycle
+

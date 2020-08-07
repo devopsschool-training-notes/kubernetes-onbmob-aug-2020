@@ -1,0 +1,1000 @@
+   10  kubectl logs pod hello-pod-mohan1 -n=mohan
+   11  kubectl logs  hello-pod-mohan1 -n=mohan
+   12  kubectl logs  hello-pod-mohan2 -n=mohan
+   13  clear
+   14  kubectl get pods -n=agasthi --show-labels
+   15  kubectl edit pod nginx-pod-7f59595d75-st6r6 -n=mohan
+   16  clear
+   17  cd
+   18  clear
+   19  pwd
+   20  kubectl edit svc my-cs -n=mohan
+   21  kubectl get pods -n=mohan
+   22  kubectl get pods -n=mohan --show-labels
+   23  kubectl edit svc my-cs -n=mohan
+   24  kubectl describe svc my-cs -n=mohan
+   25  kubectl edit svc my-cs -n=mohan
+   26  kubectl describe svc my-cs -n=mohan
+   27  kubectl edit pods hello-pod-gopi -n=gopi
+   28  kubectl edit pods hello-pod-gopi -n=gopi --show-labels
+   29  kubectl get pods hello-pod-gopi -n=gopi --show-labels
+   30  kubectl edit pods hello-pod-gopi -n=gopi
+   31  kubectl get pods hello-pod-gopi -n=gopi
+   32  kubectl get pods hello-pod-gopi -n=gopi --show-labels
+   33  kubectl get svc -n=gopi
+   34  kubectl describe svc my-cs  -n=gopi
+   35  curl http://10.47.0.6
+   36  curl http://10.110.131.93
+   37  curl http://10.110.131.93:8080
+   38  kubectl describe svc my-cs  -n=gopi
+   39  cd /home/centos/kubernetes-onbmob-aug-2020/manohar/
+   40  ls -lrth
+   41  ll
+   42  cd kubernetes-onbmob-aug-2020/
+   43  ll
+   44  cd priya/
+   45  ll
+   46  cd ../mahim
+   47  ll
+   48  kubectl describe svc my-cs  -n=mahim
+   49  history |grep "mahim"
+   50  kubectl get svc -n=mahim
+   51  kubectl get pods -n=mahim
+   52  kubectl describe svc mahim-service-new -n=mahim
+   53  grep "mahim-service-new" *
+   54  kubectl create service nodeport mahim-service-nodeport --tcp=8080:80
+   55  kubectl delete svc service/mahim-service-nodeport
+   56  kubectl delete svc mahim-service-nodeport
+   57  kubectl get svc -n=mahim
+   58  kubectl create service nodeport mahim-service-nodeport --tcp=8080:80 -n=mahim
+   59  kubectl get svc -n=mahim
+   60  kubectl describe svc mahim-service-nodeport -n=mahim
+   61  kubectl delete svc mahim-service-nodeport -n=mahim
+   62  kubectl get svc -n=mahim
+   63  kubectl create service nodeport mahim-service-nodeport --selector name=nodeport  --tcp=8080:80 -n=mahim
+   64  kubectl create service nodeport mahim-service-nodeport --selectorname=nodeport  --tcp=8080:80 -n=mahim
+   65  kubectl create service nodeport --help'
+   66  kubectl create service nodeport --help
+   67  kubectl create service --help
+   68  kubectl create service nodeport mahim-service-nodeport  --tcp=8080:80 -n=mahim
+   69  ll
+   70  vim my-rc.yaml 
+   71  kubectl create -f my-rc.yaml -n=mahim
+   72  kubectl get svc -n=mahim
+   73  kubectl get pods -n=mahim
+   74  kubectl describe svc mahim-service-nodeport  -n=mahim
+   75  ll
+   76  vim my-rc.yaml 
+   77  curl http://10.100.183.128:31199
+   78  curl http://10.100.183.128:8080
+   79  cd ../rajesh/
+   80  ll
+   81  vim pod1.yaml 
+   82  cd ../
+   83  cd mahim
+   84  ll
+   85  vim pod1.yaml 
+   86  vim my-rc.yaml 
+   87  cp my-rc.yaml my-rc-new.yaml
+   88  cd ../rajesh/
+   89  vim pod1.yaml 
+   90  cd -
+   91  vim my-rc-new.yaml 
+   92  vim my-rc-new.yaml
+   93  kubectl create -f my-rc-new.yaml -n=mahim
+   94  vim my-rc-new.yaml
+   95  kubectl create -f my-rc-new.yaml -n=mahim
+   96  kubectl get pods -n=mahim
+   97  kubectl describe svc mahim-service-nodeport  -n=mahim
+   98  ll
+   99  vim my-rc.yaml
+  100  kubectl apply -f my-rc.yaml -n=mahim
+  101  kubectl get pods -n=mahim
+  102  kubectl describe svc mahim-service-nodeport  -n=mahim
+  103  ll
+  104  kubectl get pods -n=mahim
+  105  kubectl delete pod  http-rc -n=mahim
+  106  kubectl get pods -n=mahim
+  107  kubectl delete rc  http-rc -n=mahim
+  108  kubectl get pods -n=mahim
+  109  kubectl describe svc mahim-service-nodeport  -n=mahim
+  110  kubectl get pods -n=mahim
+  111  kubectl delete rc  http-rc-new -n=mahim
+  112  kubectl describe svc mahim-service-nodeport  -n=mahim
+  113  kubectl get pods -n=mahim
+  114  kubectl describe svc mahim-service-nodeport  -n=mahim
+  115  kubectl delete service  mahim-service-nodeport -n=mahim
+  116  kubectl describe svc mahim-service-nodeport  -n=mahim
+  117  kubectl create service nodeport mahim-service-nodeport --tcp=8080:80 -n=mahim
+  118  kubectl describe svc mahim-service-nodeport  -n=mahim
+  119  ll
+  120  kubectl create -f my-rc-new.yaml -n=mahim
+  121  kubectl describe svc mahim-service-nodeport  -n=mahim
+  122  kubectl create -f my-rc.yaml -n=mahim
+  123  kubectl describe svc mahim-service-nodeport  -n=mahim
+  124  cd /home/centos/kubernetes-onbmob-aug-2020/manohar/
+  125  kubectl create service nodeport my-ns --tcp=8080:80 -n=manohar
+  126  kubectl create service loadbalancer my-lbs --tcp=8080:80 -n=manohar
+  127  kubectl ps
+  128  kubectl -h
+  129  kubectl get nodes -n=manohar
+  130  kubectl get -n=manohar
+  131  kubectl get pods -n=manohar
+  132  kubectl delete -f pod1.yaml -n=manohar
+  133  kubectl delete -f dep.yaml -n=manohar
+  134  kubectl get pods -n=manohar
+  135  ls -lrth
+  136  vim pod1.yaml 
+  137  kubectl create -f pod1.yaml -n=manohar
+  138  vim pod1.yaml 
+  139  kubectl create -f pod1.yaml -n=manohar
+  140  vim pod1.yaml 
+  141  kubectl create -f pod1.yaml -n=manohar
+  142  vim pod1.yaml 
+  143  vim ../rajesh/pod1.yaml 
+  144  kubectl delete -f pod1.yaml -n=manohar
+  145  vim pod1.yaml 
+  146  kubectl delete -f pod1.yaml -n=manohar
+  147  vim pod1.yaml 
+  148  kubectl create -f pod1.yaml -n=manohar
+  149  vim pod1.yaml 
+  150  kubectl create -f pod1.yaml -n=manohar
+  151  kubectl get node -n=manohar
+  152  kubectl get svc -n=manohar
+  153  kubectl get pod -n=manohar
+  154  kubectl get pod -n=manohar -o wide
+  155  kubectl get np -n=manohar -o wide
+  156  kubectl get NodePort -n=manohar -o wide
+  157  kubectl get NodePort -n=manohar 
+  158  curl http://10.109.90.183:32051
+  159  curl http://10.109.90.183:8080
+  160  http://10.102.188.24:8080/
+  161  curl http://10.102.188.24:8080/
+  162  vim pod1.yaml 
+  163  kubectl create -f pod1.yaml -n=manohar
+  164  vim pod1.yaml 
+  165  kubectl create -f pod1.yaml -n=manohar
+  166  kubectl get loadbalancer -n=manohar -o wide
+  167  kubectl get svc loadbalancer -n=manohar -o wide
+  168  kubectl get svc -n=manohar
+  169  get 10.102.167.192:31498
+  170  get http://10.102.167.192:31498
+  171  curl http://10.102.167.192:31498
+  172  curl http://10.102.167.192:8080
+  173  kubectl delete service loadbalancer my-lbs --tcp=8080:80 -n=manohar
+  174  kubectl delete service loadbalancer my-lbs -n=manohar
+  175  kubectl create service loadbalancer my-lbs --tcp=8080:80 -n=manohar
+  176  kubectl describe svc my-lbs -n=manohar
+  177  curl http://10.110.220.101
+  178  curl http://10.110.220.101:31311
+  179  curl http://10.110.220.101:8080
+  180  curl http://10.110.220.101:80
+  181  curl http://10.42.0.23
+  182  curl http://10.44.0.12
+  183  kubectl create -f pod1.yaml -n=manohar
+  184  vim pod1.yaml 
+  185  kubectl create -f pod1.yaml -n=manohar
+  186  kubectl describe svc my-lbs -n=manohar
+  187  http://10.47.0.13
+  188  curl http://10.47.0.13
+  189  curl http://10.110.220.101:31311/
+  190  cd kubernetes-onbmob-aug-2020/maha/
+  191  ls -ltrh
+  192  cp -vf ../rajesh/pod1.yaml test3.yaml
+  193  ls -ltrh
+  194  chmod 777 test
+  195  chmod 777 test3.yaml 
+  196  ls -ltrh
+  197  kubectl get pods
+  198  kubectl get pods -n=maha
+  199  kubectl delet pod hello-pod-maha -n=maha
+  200  kubectl delete pod hello-pod-maha -n=maha
+  201  kubectl delete pod hello-pod-maha1 -n=maha
+  202  kubectl get svc -n=maha
+  203  cp -vf test3.yaml test4.aml
+  204  vim test3.yaml 
+  205  vim test4.aml 
+  206  kubectl create -f test3.yaml -n=maha
+  207  kubectl create -f test4.yaml -n=maha
+  208  ls -ltrh
+  209  kubectl create -f test4.aml -n=maha
+  210  ls -ltrh
+  211  kubectl get pods -n=maha
+  212  kubectl create service nodeport maha-ns --tcp=8080:80
+  213  kubectl delete service maha-ns
+  214  kubectl create service nodeport maha-ns --tcp=8080:80 -n=maha
+  215  kubectl get svc -n=maha
+  216  kubectl describe maha-ns -n=maha
+  217  kubectl describe svc  maha-ns -n=maha
+  218  curl "http://10.100.160.125:8080"
+  219  kubectl describe  hello-pod-maha2 -n=maha
+  220  kubectl describe pod  hello-pod-maha2 -n=maha
+  221  kubectl describe  hello-pod-maha2 -n=maha --show-labels
+  222  kubectl describe pod  hello-pod-maha2 -n=maha -show-labels
+  223  kubectl describe pod  hello-pod-maha2 -n=maha --show-labels
+  224  kubectl describe pods -n=maha --show-labels
+  225  kubectl describe pods -n=maha -show-labels
+  226  kubectl get pods -n=maha --show-labels
+  227  history | grep over
+  228  history | grep labels
+  229  kubectl get pods -n=maha
+  230  kubectl get pods -n=maha --show-labels
+  231  kubectl label -h
+  232  kubectl get pods -n=maha --show-labels
+  233  kubectl label pods hello-pod-maha2 --overwrite my-maha -n=maha
+  234  kubectl label pods hello-pod-maha2 --overwrite app=my-maha -n=maha
+  235  kubectl get pods -n=maha --show-labels
+  236  kubectl label pods hello-pod-maha1 --overwrite app=my-maha -n=maha
+  237  kubectl label pods hello-pod-maha4 --overwrite app=my-maha -n=maha
+  238  kubectl get svc -n=maha
+  239  kubectl get svc -n=maha -show-labels
+  240  kubectl get svc -n=maha --show-labels
+  241  kubectl label pods hello-pod-maha4 --overwrite app=maha-ns -n=maha
+  242  kubectl label pods hello-pod-maha2 --overwrite app=maha-ns -n=maha
+  243  kubectl describe svc NodePort -n=maha
+  244  kubectl describe svc maha-ns -n=maha
+  245  curl 'https://10.100.160.125:8080'
+  246  curl 'http://10.100.160.125:8080'
+  247  kubectl get pods
+  248  kubectl get pods -n=maha
+  249  kubectl delete pod hello-pod-maha2 -n=maha
+  250  kubectl get pods -n=maha
+  251  ls -ltrh
+  252  kubectl get svc -n=maha
+  253   kubectl describe svc  maha-ns -n=maha
+  254  ls -ltrh
+  255  kubectl create -f pod1.yaml -n=maha
+  256   kubectl describe svc  maha-ns -n=maha
+  257  kubectl get svc -n=maha -show-labels
+  258  history 
+  259  kubectl get pods -n=maha
+  260  kubectl get pods -n=maha --show-labels
+  261  kubectl label pods hello-pod-maha --overwrite app=maha-ns -n=maha
+  262  kubectl get pods -n=maha --show-labels
+  263  kubectl get svc -n=maha
+  264  kubectl describe svc maha-ns --show-labels
+  265  kubectl describe svc maha-n
+  266  kubectl describe svc maha-ns -n=maha
+  267  curl 'http://10.100.160.125:8080'
+  268  history 
+  269  kubectl get svc -n=maha
+  270  kubectl describe svc maha-cs -n=maha
+  271  history
+  272  kubectl get pods -n=maha
+  273  kubectl get pods -n=maha --show-labels
+  274  kubectl create service clusterip maha-ns --tcp=8080:80 -n=maha
+  275  kubectl delete svc maha-cs -n=maha
+  276  kubectl create service clusterip maha-ns --tcp=8080:80 -n=maha
+  277  kubectl get svc -n=maha
+  278  kubectl get pods -n=maha --show-labels
+  279  kubectl get svc -n=maha
+  280  kubectl create service clusterip maha-ns1 --tcp=8080:80 -n=maha
+  281  kubectl get svc -n=maha
+  282  kubectl describe svc maha-cs1 -n=maha
+  283  kubectl describe svc maha-ns1 -n=maha
+  284  kubectl edit svc maha-ns1 -n=maha
+  285  kubectl get pods -n=maha --show-labels 
+  286  kubectl edit svc maha-ns1 -n=maha
+  287  kubectl get svc -n=maha
+  288  kubectl describe svc maha-ns -n=maha
+  289  kubectl describe svc maha-ns1 -n=maha
+  290  kubectl describe svc -n=maha
+  291  kubectl get svc -n=maha
+  292  kubectl create service clusterip maha-ns --tcp=8080:80 -n=maha
+  293  kubectl get nodes
+  294  clear
+  295  ls
+  296  kubectl create svc -h
+  297  kubectl create svc nodeport -h
+  298  clear
+  299  ls
+  300  kubectl create service nodeport my-ns --tcp=8080:80
+  301  kubectl delete service my-ns
+  302  kubectl create service nodeport my-ns --tcp=8080:80 -n=rajes
+  303  kubectl create service nodeport my-ns --tcp=8080:80 -n=rajesh
+  304  kubectl get svc
+  305  kubectl get svc -n=rajesh
+  306  kubectl describe svc my-ns -n=rajesh
+  307  kubectl get pods -n=rajesh --show-lables
+  308  kubectl get pods -n=rajesh --show-labels
+  309  kubectl
+  310  kubectl label -h
+  311  kubectl get pods -n=rajesh --show-labels
+  312  kubectl label pods hello-pod-rajesh app=my-ns
+  313  kubectl label pods hello-pod-rajesh app=my-ns -n=rajesh
+  314  kubectl label pods hello-pod-rajesh app=my-ns -n=rajesh --overwrite
+  315  kubectl label pods hello-pod-rajesh1 app=my-ns -n=rajesh --overwrite
+  316  kubectl get pods -n=rajesh --show-labels
+  317  kubectl describe svc my-ns -n=rajesh
+  318  clear
+  319  ls
+  320  kubectl describe svc my-ns -n=rajesh
+  321  curl http://10.104.123.99:8080
+  322  clear
+  323  ls
+  324  curl http://10.104.123.99:8080
+  325  kubectl describe svc my-ns -n=rajesh
+  326  clear
+  327  kubectl get svc -n=rajesh
+  328  clear
+  329  kubectl create service -h
+  330  kubectl create service loadbalancer -h
+  331  clear
+  332  kubectl create service loadbalancer -h
+  333  clear
+  334  kubectl create service loadbalancer my-lbs --tcp=8080:80 -n=rajesh
+  335  kubectl get svc -n=rajesh
+  336  kubectl get svc -n=rajesh
+  337  kubectl get svc -n=rajesh --show-labels
+  338  clear
+  339  ls
+  340  cd kubernetes-onbmob-aug-2020/
+  341  ls
+  342  cd rajesh/
+  343  ls
+  344  more rc.yaml
+  345  clear
+  346  ls
+  347  vi pod1.yaml 
+  348  kubectl create -f pod1.yaml 
+  349  kubectl delete  -f pod1.yaml 
+  350  kubectl create -f pod1.yaml -n=rajesh
+  351  vi pod1.yaml 
+  352  kubectl create -f pod1.yaml -n=rajesh
+  353  clear
+  354  kubectl get svc
+  355  kubectl get svc -n=rajesh
+  356  curl http://10.98.117.111:8080
+  357  cd /home/centos/kubernetes-onbmob-aug-2020/madhu/
+  358  ll
+  359  kubectl get pods -n=madhu
+  360  kubectl create service clusterip my-cs --tcp=8080:80 -n-madhu
+  361  kubectl create service clusterip my-cs --tcp=8080:80 -n=madhu
+  362  kubectl get svc -n=madhu
+  363  kubectl describe svc my-cs -n=madhu
+  364  kubectl describe svc my-cs -n=madhu --show-labels
+  365  kubectl describe svc my-cs -n=madhu --show-lables
+  366  kubectl describe svc my-cs -n=madhu --show-labels
+  367  kubectl get svc -n=madhu --show-labels
+  368  kubectl create service nodeport my-ns --tcp=8080:80 -n=madhu
+  369  kubectl describe svc my-cs -n=madhu
+  370  kubectl create service loadbalancer my-lbs --tcp=8080:80 -n=madhu
+  371  kubectl describe svc my-cs -n=madhu
+  372  kubectl get svc my-cs -n=madhu
+  373  kubectl describe svc my-cs -n=madhu
+  374  kubectl describe svc madhu -n=madhu
+  375  kubectl describe svc my-cs -n=madhu
+  376  kubectl get pods -n=madhu
+  377  kubectl describe svc my-cs -n=madhu
+  378  ll
+  379  vim loadtest.yaml
+  380  kubectl apply -f hello-application.yaml -n=madhu
+  381  kubectl apply -f loadtest.yaml -n=madhu
+  382  kubectl get deployments loadtest.yaml
+  383  kubectl get deployments loadtest.yaml -n=madhu
+  384  kubectl get deployments  -n=madhu
+  385  kubectl get deployments hello-world -n=madhu
+  386  kubectl describe deployments hello-world -n=madhu
+  387  kubectl describe services example-service -n=madhu
+  388  kubectl describe services hello-world -n=madhu
+  389  kubectl get svc -n=madhu --show-labels
+  390  kubectl get pods -n=madhu -o wide
+  391  kubectl describe svc my-lbs -n=madhu
+  392  kubectl describe svc my-cs -n=madhu
+  393  kubectl describe svc my-ns -n=madhu
+  394  curl "10.99.143.127:31503"
+  395  curl http://10.99.143.127
+  396  curl "http://10.99.143.127:31503"
+  397  ifconfig
+  398  curl "http://172.31.22.124:31503"
+  399  curl "http://52.66.202.153:31503"
+  400  kubectl get pods -n=madhu -o wide
+  401   kubectl get svc -n=madhu
+  402  curl http://10.44.0.26
+  403  curl http://10.44.0.3
+  404  curl http://10.44.0.13
+  405  curl http://10.44.0.13:31503
+  406  curl http://10.42.0.10
+  407  curl http://10.42.0.10:31503
+  408  curl http://10.42.0.14:31503
+  409  curl http://10.42.0.14
+  410  curl http://10.42.0.14:80
+  411  kubectl describe svc  my-cs -n=rajesh
+  412  kubectl describe svc  my-ns -n=rajesh
+  413  kubectl get nodes
+  414  cd kubernetes-onbmob-aug-2020/
+  415  cd Girish.M/
+  416  ls lrth
+  417  ls -lrth
+  418  kubectl get pods -n=girish
+  419  kubectl get svc -n=girish
+  420  kubectl create service nodeport testing_np --tcp=8080:80
+  421  kubectl create service nodeport testing-p --tcp=8080:80 -n=girish
+  422  kubectl get svc -n=girish
+  423  kubectl delete svc testing-p -n=girish
+  424  kubectl get svc -n=girish
+  425  kubectl create service nodeport testing-np --tcp=8080:80 -n=girish
+  426  kubectl get svc -n=girish
+  427  ls -lrth
+  428  vim pod1.yaml
+  429  kubectl describe svc testing-np
+  430  kubectl describe svc testing-np -n=girish
+  431  kubectl create -f pod1.yaml 
+  432  kubectl get pods -n=girish
+  433  kubectl delete -f pod1.yaml
+  434  kubectl create -f pod1.yaml -n=girish
+  435  kubectl get pods -n=girish
+  436  kubectl describe svc testing-np -n=girish
+  437  kubectl get pods -n=girish --show-labels
+  438  kubectl create svc -he
+  439  kubectl create svc -h
+  440  ls
+  441  cd kubernetes-onbmob-aug-2020/
+  442  ls
+  443  cd vanshika
+  444  kubectl get pods -n=vanshika
+  445  kubectl get pods -n=vanshika --show-labels
+  446  kubectl create service nodeport my-ns --tcp=8080:80 -n=vanshika
+  447  kubectl get svc -n=vanshika
+  448  kubectl get svc -n=vanshika --show-labels
+  449  kubectl edit svc my-cs -n=vanshika
+  450  kubectl get svc -n=vanshika --show-labels
+  451  kubectl describe svc my-cs -n=vanshika
+  452  kubectl describe svc my-ns -n=vanshika
+  453  kubectl create service nodeport my-ns --tcp=8080:80 -n=vanshika
+  454  kubectl create service loadbalancer my-lbs --tcp=8080:80 -n=vanshika
+  455  kubectl describe svc my-lbs -n=vanshika
+  456  kubectl get pods -n=vanshiak
+  457  kubectl get pods -n=vanshika
+  458  kubectl describe hello-pod-vanshika -n=vanshika
+  459  kubectl get pods -n=vanshika --show-labels
+  460  kubectl get pods
+  461  kubectl get pods -n=vanshika --show-labels
+  462  kubectl delete hello-pod-vanshika -n=vanshika
+  463  kubectl delete pod  hello-pod-vanshika -n=vanshika
+  464  kubectl get pods -n=vanshika --show-labels
+  465  ls
+  466  vi pod1.yaml
+  467  kubectl create -f pod1.yaml -n=vanshika
+  468  kubectl get pods -n=vanshika --show-labels
+  469  kubectl get svc -n=vanshika --show-labels
+  470  kubectl describe svc my-cs -n=vanshika
+  471  kubectl describe svc my-ns -n=vanshika
+  472  kubectl describe svc my-lbs -n=vanshika
+  473  kubectl describe pod hello-pod-vanshika -n=vanshika
+  474  clear
+  475  kubectl describe svc my-cs -n=vanshika
+  476  kubectl describe svc my-ns -n=vanshika
+  477  kubectl describe svc my-lbs -n=vanshika
+  478  kubectl describe pod hello-pod-vanshika -n=vanshika
+  479  cd kubernetes-onbmob-aug-2020/
+  480  cd gopi/
+  481  kubectl create service nodeport my-ns --tcp=8080:80
+  482  kubectl create service loadbalancer my-lbs --tcp=8080:80
+  483  kubectl get nodeport
+  484  kubectl get nodeport -n=gopi
+  485  kubectl get svc -n=gopi
+  486  kubectl get svc
+  487  kubectl create service nodeport my-ns --tcp=8080:80 -n=name
+  488  kubectl create service nodeport my-ns --tcp=8080:80 -n=gopi
+  489  kubectl create service loadbalancer my-lbs --tcp=8080:80 -n=gopi
+  490  kubectl get svc -n=gopi
+  491  kubectl describe svc -n=gopi
+  492  kubectl get pods -n=gopi
+  493  kubectl get pods -n=gopi --show-labels
+  494  kubectl get pod hello-pod-gopi1 -n=gopi
+  495  kubectl edit pod hello-pod-gopi1 -n=gopi
+  496  kubectl get pod hello-pod-gopi1 -n=gopi
+  497  kubectl get pods -n=gopi --show-labels
+  498  kubectl describe svc -n=gopi
+  499  ifconfig
+  500  curl  10.47.0.27:80
+  501  curl http:// 10.47.0.27:80
+  502  curl http://10.47.0.27:80
+  503  kubectl get svc -n=gopi
+  504  kubectl get pods -n=name
+  505  kubectl get pods -n=gopi
+  506  kubectl edit pods hello-pod-gopi -n=gopi
+  507  kubectl describe svc -n=gopi
+  508  kubectl get ep
+  509  kubectl get ep -n=rajesh
+  510  kubectl describe ep my-ns -n=rajesh
+  511  kubectl get sv -n=rajesh
+  512  kubectl get svc -n=rajesh
+  513  kubectl describe svc my-ns -n=rajesh
+  514  kubectl create svc
+  515  kubectl get svc -n=rajesh
+  516  kubectl describe svc my-lbs -n=rajesh
+  517  kubectl create service loadbalancer testing-lb --tcp=8080:80 -n=girish
+  518  kubectl get svc -n=rajesh
+  519  kubectl get svc -n=girish
+  520  kubectl describe svc testing-lb -n=girish
+  521  kubectl get pods -n=girish --show-labels
+  522  kubectl label -h
+  523  kubectl get pods -n=girish
+  524  kubectl get pods -n=girish --show-labels
+  525  kubectl label pod-girish --overwrite app=testig-lb -n=girish
+  526  kubectl label pod pod-girish --overwrite app=testig-lb -n=girish
+  527  kubectl get pods -n=girish --show-labels
+  528  kubectl describe svc testing-lb -n=girish
+  529  kubectl describe svc testing -n=girish
+  530  kubectl edit pod pod-girish
+  531  kubectl edit pod pod-girish -n=girish
+  532  kubectl describe svc testing -n=girish
+  533  kubectl describe svc testing-lb -n=girish
+  534  kubectl get nodes
+  535  kubectl describe node ip-172-31-5-189.ap-south-1.compute.internal
+  536  clear
+  537  ls
+  538  kubectl get svc -n=mohan
+  539  cd kubernetes-onbmob-aug-2020/
+  540  cd vanshika/
+  541  cd vanshika/10.98.132.47
+  542  curl http://10.98.132.47
+  543  curl http://10.98.132.47:80
+  544  clear
+  545  kubectl get pod --show-labels
+  546  kubectl get pod --show-labels -n=vanshika
+  547  kubectl delete  pod hello-pod-nagesh -n=vanshika
+  548  kubectl get pod --show-labels -n=vanshika
+  549  kubectl get deployment --show-labels
+  550  kubectl get deployment -n=vanshika --show-labels
+  551  kubectl delete  deployment maha-dep -n=vanshika
+  552  kubectl get pod --show-labels -n=vanshika
+  553  clear
+  554  ls
+  555  vi rc.yaml
+  556  vi pod1.yaml
+  557  kubectl create -f pod1.yaml -n=vanshika
+  558  kubectl get pod --show-labels -n=vanshika
+  559  kubectl get svc -n=vanshika
+  560  kubectl describe svc my-ns --show-labels
+  561  kubectl describe svc 
+  562  kubectl describe svc -n=vanshika
+  563  curl http://10.42.0.9
+  564  curl http://10.47.0.28
+  565  curl http://10.98.132.47
+  566  curl http://10.98.132.47:80
+  567  curl http://10.98.132.47:8080
+  568  cd kubernetes-onbmob-aug-2020/
+  569  ll
+  570  date
+  571  cd priya/
+  572  ll
+  573  kubectl get svc -n=priya
+  574  kubectl create service nodeport priya-np --tcp=8080:80
+  575  kubectl get svc -n=priya
+  576  kubectl get svc
+  577  kubectl delete svc priya-np
+  578  kubectl create service nodeport priya-np --tcp=8080:80 -n=priya
+  579  kubectl get svc -n=priya
+  580  kubectl create service loadbalancer priya-np --tcp=8080:80 -n=priya
+  581  kubectl create service loadbalancer priya-lb --tcp=8080:80 -n=priya
+  582  kubectl get svc -n=priya
+  583  kubectl get svc -n=priya --show-labels
+  584  ll
+  585  vi test.yaml 
+  586  cat test.yaml 
+  587  vi test-np.yaml
+  588  kubectl get svc -n=priya
+  589  kubectl describe svc priya-np -n=priya
+  590  ll
+  591  kubectl create -f test-np.yaml -n=priya
+  592  vi test-np.yaml 
+  593  kubectl create -f test-np.yaml -n=priya
+  594  kubectl describe svc priya-np -n=priya
+  595  curl http://10.97.164.147
+  596  curl http://10.97.164.147:32629
+  597  ll
+  598  kubectl get nodes
+  599  curl http://10.97.164.147:32629
+  600  kubectl get o
+  601  kubectl get po
+  602  kubectl get po -n=priya
+  603  kubectl logs -f priya-np
+  604  kubectl logs -f priya-np -n=priya
+  605  ll
+  606  cat test-np.yaml
+  607  vi test-lb.yaml
+  608  kubectl get svc -n=priya
+  609  kubectl get svc -n=priya --show-labels
+  610  vi test-lb.yaml
+  611  ll
+  612  kubectl create -f test-lb.yaml -n=priya
+  613  kubectl get svc priya-lb -n=priya
+  614  kubectl describe svc priya-lb -n=priya
+  615  curl https://10.108.102.45:31487
+  616  curl https://10.108.102.45:8080
+  617  kubcetl get po -n=priya -o wide
+  618  kubectl get po -n=priya -o wide
+  619  kubectl describe svc priya-lb -n=priya
+  620  curl http://10.47.0.15:80
+  621  kubectl get nodes
+  622  kubectl get svc -n=priya
+  623  kubectl get svc -n=priya -o wide
+  624  kubectl get po -n=priya -o wide
+  625  curl https://10.108.102.45:31487
+  626  curl http://10.108.102.45:31487
+  627  curl http://10.42.0.30:31487
+  628  curl http://10.47.0.15:31487
+  629  kubectl get po -n=priya -o wide
+  630  ll
+  631  cd kubernetes-onbmob-aug-2020/
+  632  ll
+  633  cd sunil/
+  634  ll
+  635  kubectl get srv -n=sunil
+  636  kubectl get service  -n=sunil
+  637  kubectl describe srv my-cs -n=sunil
+  638  kubectl describe service  my-cs -n=sunil
+  639  curl "http://10.111.229.73"
+  640  curl "http://10.111.229.73:8080"
+  641  kubectl describe service  my-cs -n=sunil
+  642  curl "http://10.47.0.12"
+  643  kubectl describe service  my-cs -n=sunil
+  644  kubectl create service nodeport my-ns --tcp=8080:80 -n=sunil
+  645  kubectl describe nodeport my-ns -n=sunil
+  646  kubectl describe service  my-ns -n=sunil
+  647  kubectl describe sercice my-cs -n=sunil
+  648  kubectl describe service my-cs -n=sunil
+  649  kubectl edit svc my-cs -n=sunil
+  650  kubectl describe service  my-ns -n=sunil
+  651  kubectl describe service my-cs -n=sunil
+  652  kubectl edit svc my-cs -n=sunil
+  653  kubectl describe service my-cs -n=sunil
+  654  kubectl describe service my-ns -n=sunil
+  655  curl "http://10.111.252.151:8080"
+  656  curl "http://10.111.252.151:31654/TCP"
+  657  curl "http://10.111.252.151:31654"
+  658  kubectl edit svc my-cs -n=sunil
+  659  kubectl edit svc my-ns -n=sunil
+  660  kubectl describe service my-ns -n=sunil
+  661  kubectl create service loadbalancer my-lbs --tcp=8080:80 -n=sunil
+  662  kubectl describe service my-lbs -n=sunil
+  663  kubectl edit svs my-lbs -n=sunil 
+  664  kubectl edit service  my-lbs -n=sunil 
+  665  kubectl edit service my-cs -n=sunil 
+  666  kubectl edit service my-ns -n=sunil 
+  667  kubectl edit service  my-lbs -n=sunil 
+  668  kubectl describe service my-lbs -n=sunil
+  669  kubectl describe service my-ns -n=sunil
+  670  cd ../rajesh/
+  671  l
+  672  ll
+  673  cp pod1.yaml ./sunil/
+  674  cd ../sunil/
+  675  cd ../rajesh/
+  676  ll
+  677  vim pod1.yaml 
+  678  cd ../sunil/
+  679  ll
+  680  mv pod1.yaml pod1.yamlback
+  681  cd ../rajesh/
+  682  ll
+  683  cp pod1.yaml ../sunil/
+  684  cd ../sunil/
+  685  ll
+  686  pwd
+  687  cd ../rajesh/
+  688  ll
+  689  cd ..sunil
+  690  cd ../sunil/
+  691  ll
+  692  sunil
+  693  more sunil 
+  694  rm -rf sunil 
+  695  vim pod1.yaml
+  696  kubectl get pods -n=sunil
+  697  vim pod1.yaml
+  698  kubectl create -f pod1.yaml -n=sunil
+  699  vim pod1.yaml
+  700  kubectl create -f pod1.yaml -n=sunil
+  701  kubectl get pods
+  702  kubectl get pods -n=sunil
+  703  kubectl describe svc my-lbs -n=sunil
+  704  curl "http://10.42.0.37"
+  705  curl "http://10.44.0.18"
+  706  clear
+  707  kubectl describe svc my-lbs -n=sunil
+  708  curl "http://10.44.0.18"
+  709  curl "http://10.101.80.21"
+  710  curl "http://10.101.80.21:8080"
+  711  curl "http://10.101.80.21:31272"
+  712  kubectl describe svc my-ns -n=sunil
+  713  curl http://10.42.0.37
+  714  curl http://10.111.252.151 8080
+  715  curl http://10.111.252.151 31654
+  716  curl http://10.111.252.151:31654
+  717  curl http://10.111.252.151:8080
+  718  kubectl describe svc my-ns -n=sunil
+  719  kubectl describe svc my-cs -n=sunil
+  720  curl "http://10.42.0.37"
+  721  curl "http://10.44.0.18"
+  722  kubectl get pods -n=sunil
+  723  kubectl delete pods hello-pod-sunil -n=sunil
+  724  kubectl get pods -n=sunil -o wide
+  725  kubectl describe svc my-cs -n=sunil
+  726  curl "http://10.44.0.18"
+  727  curl "http://10.42.0.37"
+  728  kubectl describe svc my-ns -n=sunil 
+  729  kubectl describe svc my-lbs -n=sunil
+  730  kubectl get pods
+  731  kubectl get pods -n=sunil
+  732  kubectl describe svc my-lbs -n=sunil
+  733  kubectl describe svc my-ns -n=sunil
+  734  kubectl get pods -n=sunl
+  735  kubectl get pods -n=sunil
+  736  kubectl describe pods hello-pod-sunil2
+  737  kubectl get pods -n=sunil -o wide
+  738  kubectl describe pods hello-pod-sunil2 -n=sunil 
+  739  kubectl describe pods hello-pod-sunil1 -n=sunil 
+  740  kubectl describe pods hello-pod-sunil2 -n=sunil 
+  741  kubectl describe svc my-lb -n=sunil
+  742  kubectl get pods -n=sunil -o wide
+  743  curl "http://10.44.0.18:
+  744  curl "http://10.44.0.18"
+  745  curl "http://10.42.0.37"
+  746  kubectl describe svc my-lb -n=sunil
+  747  kubectl describe svc my-ns -n=sunil
+  748  kubectl describe svc my-lbs -n=sunil
+  749  kubectl get pods -n=sunil -o wide
+  750  kubectl delete pods hello-pod-sunil2 -n=sunil 
+  751  kubectl get pods -n=sunil -o wide
+  752  kubectl create pod1.yaml -n=sunil
+  753  kubectl create -f pod1.yaml -n=sunil
+  754  vim pod1.yaml
+  755  kubectl create -f pod1.yaml -n=sunil
+  756  kubectl get pods -n=sunil -o wide
+  757  kubectl describe svc my-lb -n=sunil
+  758  curl "http://10.47.0.31"
+  759  curl "http://10.101.80.21"
+  760  curl "http://10.42.0.37"
+  761  curl "http://10.47.0.31"
+  762  kubectl get deploy -n=girish
+  763  kubectl get deploy
+  764  kubectl get deploy -n=rajeh
+  765  kubectl get deploy -n=srinath
+  766  kubectl get deploy -n=sunil
+  767  cd mahim
+  768  kubectl describe svc mahim-service-nodeport  -n=mahim
+  769  kubectl get pods -n=mahim
+  770  kubectl delete rc http-rc -n=mahim
+  771  kubectl get pods -n=mahim
+  772  kubectl describe svc mahim-service-nodeport  -n=mahim
+  773  curl http://10.110.137.156:8080
+  774  kubectl get pods -n=mahim
+  775  kubectl delete rc http-rc-new -n=mahim
+  776  kubectl describe svc mahim-service-nodeport  -n=mahim
+  777  ll
+  778  cd kubernetes-onbmob-aug-2020/mahim
+  779  ll
+  780  vim my-rc-new.yaml
+  781  vim my-rc.yaml
+  782  kubectl create -f my-rc.yaml -n=mahim
+  783  kubectl create -f my-rc-new.yaml -n=mahim
+  784  kubectl get pods -n=mahim
+  785  kubectl describe svc mahim-service-nodeport  -n=mahim
+  786  curl http://10.110.137.156:8080
+  787  curl http://10.42.0.1:8010.42.0.1:8010.42.
+  788  curl http://10.44.0.15:80
+  789  ll
+  790  vim my-rc-new.ya
+  791  kubectl get pod -n=mahim
+  792  kubectl get pod -n=mahim -o wide
+  793  kubectl describe pod http-rc-new-trwwg -n=mahim
+  794  kubectl get pod -n=mahim -o wide
+  795  curl http://10.44.0.15:8080
+  796  curl http://10.44.0.15:80
+  797  kubectl get pod -n=mahim -o wide
+  798  kubectlkubectl delete rc http-rc -n=mahim
+  799  kubectl delete rc http-rc -n=mahim
+  800  kubectl get pod -n=mahim -o wide
+  801  kubectl describe svc mahim-service-nodeport  -n=mahim
+  802  curl http://10.44.0.15:80
+  803  ll
+  804  vim my-rc.yaml
+  805  kubectl create -f my-rc.yaml -n=mahim
+  806  kubectl describe svc mahim-service-nodeport  -n=mahim
+  807  kubectl get pod -n=mahim -o wide
+  808  curl http://10.42.0.43:80
+  809  curl http://10.44.0.43:80
+  810  curl http://10.47.0.43:80
+  811  kubectl describe svc mahim-service-nodeport  -n=mahim
+  812  curl http://10.47.0.1:80
+  813  kubectl get pod -n=mahim -o wide
+  814  kubectl describe svc mahim-service-nodeport  -n=mahim
+  815  kubectl get pod -n=mahim
+  816  kubectl delete rc http-rc-new -n=mahim
+  817  kubectl describe svc mahim-service-nodeport  -n=mahim
+  818  kubectl create -f my-rc-new.yaml -n=mahim
+  819  kubectl describe svc mahim-service-nodeport  -n=mahim
+  820  kubectl get pod -n=mahim -o wide
+  821  kubectl describe svc mahim-service-nodeport  -n=mahim
+  822  curl "http://10.42.0.71:80"
+  823  curl "http://10.110.137.156:30943"
+  824  curl http://10.110.137.156:8080
+  825  cd /var/lib/kubelet/
+  826  ll
+  827  sudo su
+  828  exit
+  829  kubectl describe svc my-ns  -n=vanshika
+  830  curl http://10.98.132.47
+  831  curl http://10.98.132.47:8080
+  832  curl http://10.98.132.47:31344
+  833  kubectl create service loadbalancer my-lbs --tcp=8080:80
+  834  ls
+  835  cd k
+  836  cd kubernetes-onbmob-aug-2020/
+  837  cd vanshika/
+  838  ls
+  839  vi pod1.yaml 
+  840  kubectl get pods -n=vanshika
+  841  kubectl delete pod hello-pod-vanshika
+  842  kubectl delete pod hello-pod-vanshika -n=vanshika
+  843  kubectl delete pod hello-pod-vanshika1 -n=vanshika
+  844  kubectl get pods -n=vanshika
+  845  kubectl create -f pod1.yaml -n=vanshika
+  846  vi pod1.yaml 
+  847  kubectl create -f pod1.yaml -n=vanshika
+  848  kubectl get pods -n=vanshika
+  849  clear
+  850  kubectl get pods -n=vanshika
+  851  kubectl get svc my-lbs --show-labels
+  852  kubectl describe svc my-lbs -n=vanshika
+  853  curl http://10.42.0.9
+  854  curl http://10.47.0.16
+  855  curl http://10.105.236.255
+  856  cd kubernetes-onbmob-aug-2020/
+  857  cd vanshika/
+  858  curl http://10.105.236.255:31471
+  859  curl http://10.105.236.255:8080
+  860  kubectl get svc -n=vanshika
+  861  cd kubernetes-onbmob-aug-2020/vanshika/
+  862  ls
+  863  kubectl get svc -n=vanshika
+  864  kubectl get pod -n=vanshika
+  865  kubectl describe svc my-lbs -n=vanshika
+  866  curl 10.105.236.255:31471
+  867  curl 10.105.236.255:8080
+  868  ll 
+  869  ll kubernetes-onbmob-aug-2020/agasthi/
+  870  kubectl get svc -n=agasthi
+  871  kubectl describe svc agas-clus-ip -n=agasthi
+  872  kubectl get svc -n=rajesh
+  873  kubectl get svc -n=agasthi
+  874  kubectl get svc -n=agasthi --show-labels
+  875  kubectl describe svc agas-clus-ip -n=agasthi
+  876  kubectl delete svc agas-clus-ip -n=agasthi
+  877  kubectl create svc -h ?
+  878  kubectl create svc loadbalancer -h
+  879  kubectl create svc nodeport -h
+  880  kubectl create svc nodeport nginx --tcp=8080:80
+  881  kubectl delete svc nginx
+  882  kubectl create svc nodeport nginx --tcp=8080:80 -n=agasthi
+  883  kubectl describe svc nginx -n=agasthi
+  884  kubectl edit svc nginx -n=agasthi
+  885  kubectl describe svc nginx -n=agasthi
+  886  kubectl get svc -n=agasthi
+  887  curl http://10.110.229.96:8080
+  888  curl http://10.42.0.46
+  889  curl http://10.44.0.42
+  890  kubectl get pods -n=agasthi
+  891  kubectl get pods -n=agasthi -o wide
+  892  kubectl describe svc nginx -n=agasthi
+  893  curl http://10.44.0.42
+  894  curl http://10.42.0.46
+  895  curl http://10.42.0.46/index.html
+  896  curl http://10.42.0.46
+  897  curl http://10.44.0.42
+  898  curl http://10.44.0.42/index.html
+  899  kubectl edit pod nginx-pod-7f59595d75-st6r6
+  900  kubectl edit pod nginx-pod-7f59595d75-st6r6 -n=agashti
+  901  kubectl edit nginx-pod-7f59595d75-st6r6 -n=agashti
+  902  kubectl edit podsnginx-pod-7f59595d75-st6r6 -n=agashti
+  903  kubectl edit pods nginx-pod-7f59595d75-st6r6 -n=agashti
+  904  kubectl edit pods nginx-pod-7f59595d75-st6r6 -n=agasthi
+  905  kubectl edit nginx-pod2-5d5c8ff97-b6sfk -n=agasthi
+  906  kubectl edit pods nginx-pod2-5d5c8ff97-b6sfk -n=agasthi
+  907  kubectl describe svc nginx -n=agasthi
+  908  kubectl edit pods nginx-pod-7f59595d75-st6r6 -n=agasthi
+  909  kubectl describe svc nginx -n=agasthi
+  910  curl http://10.110.229.96
+  911  curl http://10.110.229.96:8080
+  912  curl http://10.44.0.12
+  913  curl http://10.42.0.46
+  914  kubectl delete pods nginx-pod-7f59595d75-st6r6 nginx-pod-7f59595d75-gpkkf
+  915  kubectl delete pods nginx-pod-7f59595d75-st6r6 nginx-pod-7f59595d75-gpkkf -n=agashti
+  916  kubectl delete nginx-pod-7f59595d75-st6r6 nginx-pod-7f59595d75-gpkkf -n=agashti
+  917  kubectl delete nginx-pod-7f59595d75-st6r6 -n=agashti
+  918  kubectl clear
+  919  clear
+  920  kubectl get pods
+  921  kubectl get pods -n=agasthi
+  922  kubectl delete pods nginx-pod-7f59595d75-gpkkf -n=agasthi
+  923  kubectl delete pods nginx-pod-7f59595d75-st6r6 -n=agasthi
+  924  kubectl delete pods nginx-pod2-5d5c8ff97-b6sfk -n=agasthi
+  925  kubectl delete pods nginx-pod2-5d5c8ff97-hzx5l -n=agasthi
+  926  kubectl get pods -n=agasthi -o wide
+  927  kubectl get svc
+  928  kubectl get svc -n=agasthi
+  929  kubectl describe svc nginx -n=agasthi
+  930  kubectl delete pods nginx-pod-7f59595d75-xgsgg -n=agasthi
+  931  kubectl delete pods nginx-pod2-5d5c8ff97-8jzcs -n=agasthi
+  932  curl http://10.44.0.31
+  933  kubectl delete pods service-5cc6f77948-ldkg2 -n=agasthi
+  934  kubectl get pods -n=agasthi -o wide
+  935  kubectl 
+  936  kubectl get deployment
+  937  kubectl scale --replicas=1 deployment/nginx-pod2 -n agasthi
+  938  kubectl get deployment
+  939  kubectl get deployment -n=agasthi
+  940  kubectl get pods -n=agasthi -o wide
+  941  kubectl delete deploy nginx-pod2
+  942  kubectl delete deploy nginx-pod2 -n agashti
+  943  kubectl delete deploy nginx-pod2 -n=agashti
+  944  kubectl delete deployment nginx-pod2 -n=agashti
+  945  kubectl delete nginx-pod2 -n=agashti
+  946  kubectl delete deploy nginx-pod -n=agashti
+  947  kubectl delete deploy nginx-pod -n=agasthi
+  948  kubectl delete deploy nginx-pod2 -n=agasthi
+  949  kubectl delete deploy service -n=agasthi
+  950  clear
+  951  cd kubernetes-onbmob-aug-2020/agasthi/
+  952  ll
+  953  vim replica.yaml 
+  954  kubectl create -f replica.yaml -n=agasthi
+  955  kubectl get pods -n=agasthi
+  956  kubectl get pods -n=agasthi -o wide
+  957  curl http://10.44.0.19
+  958  telnet 10.44.0.19 80
+  959  ping 10.44.0.19
+  960  vim /etc/selinux/config 
+  961  grep nginx-pod2 *
+  962  ll
+  963  vim deploy.yaml.x 
+  964  vim /etc/selinux/config 
+  965  vim pod.yaml
+  966  kubectl create -f pod.yaml -n=agasthi
+  967  kubectl get pods -n=agasthi -o wide
+  968  curl http://10.42.0.7
+  969  clear
+  970  kubectl get pods -n=agasthi -o wide
+  971  kubectl delete deploy agasthi-rc -n=agasthi
+  972  kubectl delete rc agasthi-rc -n=agasthi
+  973  kubectl get pods -n=agasthi -o wide
+  974  kubectl edit pods agasthi-pod -n=agasthi
+  975  kubectl get svc -n=agasthi
+  976  kubectl edit svc nginx -n=agasthi
+  977  kubectl get pods -n=agasthi -o wide
+  978  curl http://10.42.0.46
+  979  curl http://10.42.0.7
+  980  clear
+  981  kubectl get pods -n=agasthi -o wide
+  982  kubectl describe svc nginx -n=agasthi
+  983  curl http://10.110.229.96:8080
+  984  kubectl get pods -n=agasthi -o wide
+  985  kubectl describe svc nginx -n=agasthi
+  986  kubectl edit pods agasthi-pod -n=agasthi
+  987  kubectl describe svc nginx -n=agasthi
+  988  curl http://52.66.202.153:32351/
+  989  kubectl create svc -h
+  990  kubectl get ns 
+  991  kubectl get pods -n=maha --show-labels 
+  992  kubectl get svc -n=maha --show-labels 
+  993  vim emptydir.yaml
+  994  kubectl create -f emptydir.yaml -n agasthi
+  995  kubectl get pods -n agashti
+  996  kubectl get pods -n agasthi
+  997  kubectl get pods -n agasthi -o wide
+  998  kubectl exec -it test-pd /bin/bash -n agasthi
+  999  exit
+ 1000  cd kubernetes-onbmob-aug-2020/agasthi/
+ 1001  ll
+ 1002  vim hostpath.yalm
+ 1003  vim hostpath.yaml
+ 1004  kubectl create -f hostpath.yaml -n agasthi
+ 1005  kubectl get pods -n agasthi
+ 1006  kubectl exec -it hostpath /bin/bash/ -n agasthi
+ 1007  kubectl exec -it hostpath /bin/bash -n agasthi
+ 1008  kubectl get pods -n agasthi -o wide
+ 1009  history >hist.txt

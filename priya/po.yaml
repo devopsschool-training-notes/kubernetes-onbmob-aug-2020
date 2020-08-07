@@ -1,0 +1,18 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: priyapvc
+spec:
+  containers:
+    - name: task-pv
+      image: scmgalaxy/nginx-devopsschoolv1
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: priya-pv-claim1
+  volumes:
+    - name: priya-pvc
+      persistentVolumeClaim:
+        claimName: priya-pv-claim1

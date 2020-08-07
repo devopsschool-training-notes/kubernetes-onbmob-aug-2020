@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-1
+  labels:
+    app: sat-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sat-nginx
+  template:
+    metadata:
+      labels:
+        app: sat-nginx
+    spec:
+      containers:
+      - name: webserver1
+        image: scmgalaxy/nginx-devopsschoolv1
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /test-pd1
+          name: test-volume1
+      volumes:
+      - name: test-volume1
+        hostPath:
+          path: /data1
+          type: DirectoryOrCreate
+

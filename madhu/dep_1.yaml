@@ -90,7 +90,7 @@ metadata:
   selfLink: /apis/apps/v1/namespaces/madhu/deployments/my-deptest
 spec:
   progressDeadlineSeconds: 600
-  replicas: 12
+  replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:

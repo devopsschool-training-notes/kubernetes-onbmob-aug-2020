@@ -1,0 +1,1000 @@
+   49  kubectl get pods -n=mohammed --show-labels
+   50  describe pod asif1 -n=mohammed
+   51  kubectl describe pod asif1 -n=mohammed
+   52  kubectl edit pod asif1 -n=mohammed
+   53  ll
+   54  vi rc.yml 
+   55  vim pod1.yaml 
+   56  kubectl create -f pod1.yaml -n=mohammed
+   57  kubectl get pods -n=mohammed --show-labels
+   58  kubectl get pods -n=mohammed --show-labels -o wide
+   59  curl http://10.42.0.42
+   60  curl http://10.42.0.1
+   61  kubectl get pods -n=mohammed --show-labels -o wide
+   62  kubectl get svc -n=mohammed --show-labels -o wide
+   63  kubectl describe svc asif-cs -n=mohammed
+   64  kubectl edit svc asif-cs -n=mohammed
+   65  kubectl describe svc asif-cs -n=mohammed
+   66  curl http://10.104.114.163
+   67  curl http://10.104.114.163:7001
+   68  kubectl get svc -n=mohammed --show-labels -o wide
+   69  kubectl edit svc asif-ns -n=mohammed
+   70  kubectl describe svc asif-ns -n=mohammed
+   71  curl http://10.101.238.177:7001
+   72  kubectl get svc -n=mohammed --show-labels -o wide
+   73  curl http://10.101.238.177:31360
+   74  curl http://10.101.238.177:7001
+   75  ll
+   76  kubectl get svc -n=mohammed --show-labels -o wide
+   77  kubectl edit svc asif-lbs -n=mohammed
+   78  kubectl describe svc asif-lbs -n=mohammed
+   79  kubectl get svc -n=mohammed --show-labels -o wide
+   80  curl http://10.96.70.222
+   81  curl http://10.96.70.222:30069
+   82  curl http://10.96.70.222:7001
+   83  kubectl edit svc asif-lbs -n=mohammed
+   84  kubectl delete svc asif-lbs -n=mohammed
+   85  kubectl get svc -n=mohammed --show-labels -o wide
+   86  kubectl delete svc asif-cs -n=mohammed
+   87  kubectl delete svc asif-ns -n=mohammed
+   88  kubectl create service clusterip asif-cs --tcp=8080:80 -n=mohammed
+   89  kubectl create service nodeport asif-ns --tcp=8080:80 -n=mohammed
+   90  kubectl create service loadbalancer asif-lbs --tcp=8080:80 -n=mohammed
+   91  kubectl edit svc asif-cs -n=mohammed
+   92  kubectl edit svc asif-ns -n=mohammed
+   93  kubectl edit svc asif-lbs -n=mohammed
+   94  kubectl get svc -n=mohammed --show-labels -o wide
+   95  curl http://10.100.250.210:31628
+   96  curl http://10.100.250.210:8080
+   97  kubectl get pod -n=mohammed --show-labels -o wide
+   98  kubectl get svc -n=mohammed --show-labels -o wide
+   99  kubectl get pod -n=mohammed --show-labels -o wide
+  100  kubectl get svc -n=mohammed --show-labels -o wide
+  101  kubectl get pod -n=mohammed --show-labels -o wide
+  102  kubectl edit pod asif3 -n=mohammed
+  103  kubectl edit pod asif2 -n=mohammed
+  104  kubectl edit pod asif1 -n=mohammed
+  105  kubectl get pod -n=mohammed --show-labels -o wide
+  106  kubectl delete pod asif2 -n=mohammed
+  107  kubectl get pod -n=mohammed --show-labels -o wide
+  108  ll
+  109  vim pod1.yaml 
+  110  vim rc.yml
+  111  kubectl edit pod rc-asif-2fnqt -n=mohammed
+  112  kubectl edit pod asif2 -n=mohammed
+  113  vim pod1.yaml 
+  114  kubectl create -f pod1.yaml -n=mohammed
+  115  kubectl get pod -n=mohammed --show-labels -o wide
+  116  kubectl get sev -n=mohammed --show-labels -o wide
+  117  kubectl get svc -n=mohammed --show-labels -o wide
+  118  kubectl describe svc asif-lbs -n=mohammed
+  119  kubectl get pod -n=mohammed --show-labels -o wide
+  120  ll
+  121  vim newpod.yml
+  122  kubectl create -f newpod.yml -n=mohammed
+  123  kubectl get pod -n=mohammed --show-labels -o wide
+  124  kubectl describe pod -n=mohammed
+  125  kubectl get pod -n=mohammed --show-labels -o wide
+  126  kubectl get pod test-pd-emptydir -n=mohammed --show-labels -o wide
+  127  kubectl exec -it pod test-pd-emptydir /bin/bash -n-mohammed
+  128  kubectl exec -it test-pd-emptydir /bin/bash -n-mohammed
+  129  kubectl exec -it test-pd-emptydir /bin/bash -n=mohammed
+  130  cd /var/
+  131  ls
+  132  locate aaa.txt
+  133  find / -name  aaa.txt
+  134  sudo su
+  135  kubectl exec -it test-pd-emptydir /bin/bash -n=mohammed
+  136  kubectl get pod test-pd-emptydir -n=mohammed --show-labels -o wide
+  137  kubectl get pod -n=mohammed --show-labels -o wide
+  138  kubectl delete pod test-pd-emptydir -n=mohammed
+  139  kubectl get pod -n=mohammed --show-labels -o wide
+  140  ll
+  141  cd /home/centos/kubernetes-onbmob-aug-2020/mohammed/
+  142  ll
+  143  vim newdep.yaml
+  144  cd ../rajesh/
+  145  ll
+  146  vim dep.yml
+  147  cd ../mohammed/
+  148  vim newdep.yaml
+  149  kubectl create -f newdep.yaml -n=mohammed
+  150  kubectl get pod -n=mohammed --show-labels -o wide
+  151  kubectl get pod -n=mohammed --show-labels
+  152  kubectl exec -it nginx-deployment-1-5cd74966d7-2hzqx /bin/bash -n=mohammed
+  153  kubectl get pod -n=mohammed --show-labels
+  154  kubectl delete pod nginx-deployment-1-5cd74966d7-2hzqx -n=mohammed
+  155  kubectl get pod -n=mohammed --show-labels
+  156  kubectl get pod -n=mohammed --show-labels -o wide
+  157  kubectl get pod -n=mohammed
+  158  delete pod rc-asif-2fnqt rc-asif-7z7dx rc-asif-cwr2f rc-asif-j7x5l rc-asif-zk766 -n=mohammed
+  159  kubectl delete pod rc-asif-2fnqt rc-asif-7z7dx rc-asif-cwr2f rc-asif-j7x5l rc-asif-zk766 -n=mohammed
+  160  kubectl get pod -n=mohammed
+  161  kubectl get pod -n=mohammed -o wide
+  162  kubectl exec -it nginx-deployment-1-5cd74966d7-8hpxx /bin/bash -n=mohammed
+  163  kubectl get pod -n=mohammed --show-labels -o wide
+  164  kubectl get pod -n=mohammed -o wide
+  165  kubectl delete pod nginx-deployment-1-5cd74966d7-8hpxx -n=mohammed
+  166  kubectl get pod -n=mohammed -o wide
+  167  kubectl exec -it nginx-deployment-1-5cd74966d7-2mdjl /bin/bash -n=mohammed
+  168  kubectl get secret -n=mohammed
+  169  ls
+  170  ll
+  171  vim cnfmap.yaml
+  172  kubectl get cm -n=mohammed
+  173  kubectl create -m cnfmap.yaml -n=mohammed
+  174  kubectl create -f cnfmap.yaml -n=mohammed
+  175  kubectl get cm -n=mohammed
+  176  kubectl get apiVersion: v1 -n=mohammed
+  177  kind: Pod
+  178  metadata:
+  179    name: helloworld-nginx
+  180    labels:
+  181      app: helloworld-nginx
+  182  spec:
+  183    containers:
+  184    - name: nginx
+  185      image: nginx:1.11
+  186      ports:
+  187      - containerPort: 80
+  188      volumeMounts:
+  189      - name: config-volume
+  190        mountPath: /etc/nginx/conf.d
+  191    - name: k8s-demo
+  192      image: wardviaene/k8s-demo
+  193      ports:
+  194      - containerPort: 3000
+  195    volumes:
+  196      - name: config-volume
+  197        configMap:
+  198          name: my-config
+  199          items:
+  200          - key: reverseproxy.conf
+  201            path: myconfo.conf
+  202  kubctl get configmap -n=mohammed
+  203  kubectl get configmap -n=mohammed
+  204  history
+  205  kubectl get pod -n=mohammed
+  206  kubectl get svc -n=mohammed
+  207  kubectl get secrate -n=mohammed
+  208  kubectl get secret -n=mohammed
+  209  kubectl get config -n=mohammed
+  210  kubectl get configmap -n=mohammed
+  211  kubectl get configMap -n=mohammed
+  212  kubectl get pod -n=mohammed
+  213  vim nfspod.yaml
+  214  kubectl -f nfspod.yaml -n=mohammed
+  215  kubectl create -f nfspod.yaml -n=mohammed
+  216  kubectl get pod -n=mohammed
+  217  vim nfspod.yaml
+  218  kubectl apply -f nfspod.yaml -n=mohammed
+  219  kubectl get pod -n=mohammed
+  220  kubectl exec -it my-dep1-57c7d8c448-bkdm8 /bin/bash -n=mohammed
+  221  sudo su
+  222  kubectl get pod -n=mohammed -o wide
+  223  ll
+  224  ls -lrth
+  225  vim cnfmap.yaml
+  226  kubectl apply -f cnfmap.yaml -n=mohammed
+  227  kubectl get pod -n=mohammed -o wide
+  228  kubectl delete -f cnfmap.yaml -n=mohammed
+  229  kubectl get pod -n=mohammed -o wide
+  230  kubectl create -f cnfmap.yaml -n=mohammed
+  231  kubectl get pod -n=mohammed -o wide
+  232  describe pod helloworld-nginx -n=mohammed
+  233  kubectl describe pod helloworld-nginx -n=mohammed
+  234  kubectl get pod -n=mohammed -o wide
+  235  echo  'asif@123' | base64
+  236  locate reverseproxy.conf
+  237  find / -name reverseproxy.conf
+  238  sudo su
+  239  vim reverseproxy.conf
+  240  ll
+  241  kubectl create configmap my-config --from-file=reverseproxy.conf -n=mohammed
+  242  kubectl get cm -n=mohammed
+  243  kubectl get pod -n=mohammed
+  244  ls -lrth
+  245  kubectl delete -f cnfmap.yaml -n=mohammed
+  246  kubectl get pod -n=mohammed
+  247  kubectl create -f cnfmap.yaml -n=mohammed
+  248  kubectl get pod -n=mohammed
+  249  kubectl describe pod helloworld-nginx -n=mohammed
+  250  ---------------------------
+  251  kubectl exec -it helloworld-nginx /bin/bash
+  252  cd /etc/nginx/conf.d
+  253  1
+  254  2
+  255  3
+  256  ---------------------------
+  257  kubectl exec -it helloworld-nginx /bin/bash -n=mohammed
+  258  ll
+  259  vim secret.yaml
+  260  kubectl create -f secret.yaml -n=mohammed
+  261  kubectl get cm -n=mohammed
+  262  kubectl get secret -n=mohammed
+  263  describe secret mysecret -n=mohammed
+  264  kubectl describe secret mysecret -n=mohammed
+  265  vim secretpod.yaml
+  266  kubectl create -f secretpod.yaml -n=mohammed
+  267  kubectl get pod -n=mohammed
+  268  kubectl describe pod mypodsecret -n=mohammed
+  269  kubectl get pod -n=mohammed
+  270  kubectl exec -it mypodsecret /bin/bash/ -n=mohammed
+  271  kubectl exec -it mypodsecret /bin/bash -n=mohammed
+  272  kubectl get pv -n=mohammed
+  273  describe pv maha-pv0001
+  274  kubectl describe pv maha-pv0001
+  275  kubectl describe pv vanshikapv1
+  276  ll
+  277  vim pv.yaml
+  278  kubectl create -f pv.yaml -n=mohammed
+  279  kubectl get pv -n=mohammed
+  280  cp pv.yaml pv1.yaml 
+  281  ll
+  282  vim pv1.yaml
+  283  ll
+  284  kubectl get pv -n=mohammed
+  285  kubectl create -f pv1.yaml -n=mohammed
+  286  kubectl get pv -n=mohammed
+  287  vim pvc.yaml
+  288  cp pvc.yaml pvc1.yaml 
+  289  vim pvc1.yaml
+  290  kubectl create -f pvc.yaml -n=mohammed
+  291  vim pvc1.yaml 
+  292  kubectl create -f pvc1.yaml -n=mohammed
+  293  kubectl get pv -n=mohammed
+  294  vim pvcpod.yaml
+  295  kubectl create -f pvcpod.yaml -n=mohammed
+  296  kubectl get pod -n=mohammed
+  297  kubectl describe pod asif-pv-pod1 -n=mohammed
+  298  kubectl get pod -n=mohammed
+  299  kubectl get pv -n=mohammed
+  300  kubectl get pvc -n=mohammed
+  301  ll
+  302  ls -lrth
+  303  cp pvcpod.yaml pvcpod1.yaml
+  304  vim pvcpod1.yaml
+  305  kubectl create -f pvcpod1.yaml -n=mohammed
+  306  kubectl get pvc -n=mohammed
+  307  kubectl get pod -n=mohammed
+  308  kubectl describe pod asif-pv-pod2 -n=mohammed
+  309  kubctl exec -it asif-pv-pod2 /bin/bash -n=mohammed
+  310  kubectl exec -it asif-pv-pod2 /bin/bash -n=mohammed
+  311  ll
+  312  kubectl get pvc -n=mohammed
+  313  kubectl describe pvc nfs-claim1 -n=mohammed
+  314  kubectl get pv -n=mohammed
+  315  kubectl describe pv asif-pv-2 -n=mohammed
+  316  ubectl get pod -n=mohammed
+  317  kubectl get pod -n=mohammed
+  318  kubectl exec -it asif-pv-pod1 /bin/bash -n=mohammed
+  319  ls
+  320  vim pv.yaml
+  321  ll
+  322  ls -lrth
+  323  vim pvcpod.yaml
+  324  vim pvc.yaml
+  325  vim pv.yaml
+  326  sudo su
+  327  kubctl get pv -n=mohammed
+  328  kubectl get pv -n=mohammed
+  329  kubectl exec -it asif-pv-2 /bin/bash -n=mohammed
+  330  kubectl get pod -n=mohammed
+  331  kubectl exec -it asif-pv-pod2 /bin/bash -n=mohammed
+  332  kubectl get pod -n=mohammed
+  333  cd /usr/share/nginx/html
+  334  kubectl exec -it asif-pv-pod2 /bin/bash -n=mohammed
+  335  ls
+  336  kubectl get pod -n=mohammed
+  337  kubectl delete pod asif-pv-pod2 -n=mohammed
+  338  kubectl get pod -n=mohammed
+  339  ls
+  340  ll
+  341  ls -lrth
+  342  kubectl create -f pvcpod1.yaml -n=mohammed
+  343  kubectl get pod -n=mohammed
+  344  kubectl describe pod asif-pv-pod2 -n=mohammed
+  345  kubectl get pod -n=mohammed
+  346  kubectl exec -it asif-pv-pod2 /bin/bash -n=mohammed
+  347  cd kubernetes-onbmob-aug-2020/shantha/
+  348  sl
+  349  ls
+  350  vim test.conf 
+  351  kubectl get pods -n shantha
+  352  kubectl logs pods configmap -n shantha
+  353  kubectl logs pod configmap -n shantha
+  354  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-16-11.ap-south-1.compute.internal
+  355  cd ser
+  356  cd kubernetes-onbmob-aug-2020/
+  357  cd sergio
+  358  ls -la
+  359  kubectl get ns
+  360  kubectl get nodes
+  361  ping 10.42.0.22
+  362  ping 10.44.0.4
+  363  kubectl get nodes
+  364  kubectl get services -n mohan
+  365  kubectl get svc -n sergio
+  366  kubectl get pods -n mohan
+  367  kubectl get pods -n mahim -o wide
+  368  kubectl describe http-rc-new-trwwg -n mahim
+  369  kubectl describe pod http-rc-new-trwwg -n mahim
+  370  ls -la
+  371  vim svc.yaml 
+  372  cp svc.yaml np.yaml
+  373  vim np.yaml 
+  374  cat np.yaml 
+  375  kubectl get services -n mahin
+  376  kubectl get services -n rajesh
+  377  kubectl get service my-ns -n rajesh -o yaml --export
+  378  kubectl get service my-ns -n rajesh -o yaml --export > np.yaml 
+  379  vim np.yaml 
+  380  kubectl get services -n sergio
+  381  kubectl describe service nginx -n sergio
+  382  vim np.yaml 
+  383  kubectl apply -f np.yaml 
+  384  kubectl delete service my-ns
+  385  kubectl apply -f np.yaml -n sergio
+  386  kubectl get services -n sergio
+  387  curl 10.106.75.111:32748
+  388  curl 10.106.75.111:8080
+  389  kubectl delete service my-ns -n sergio
+  390  vim np.yaml 
+  391  kubectl get pods -n sergio
+  392  kubectl get pods -n sergio --show-labels
+  393  kubectl apply -f np.yaml -n sergio
+  394  kubectl get services -n sergio
+  395  kubectl delete deploy my-dep
+  396  kubectl delete deploy my-dep -n sergio
+  397  kubectl describe service nginx-np
+  398  kubectl apply -f np.yaml -n sergio
+  399  kubectl describe service nginx-np
+  400  kubectl describe service nginx-np -n sergio
+  401  kubectl describe deploy nginx
+  402  kubectl describe deploy nginx-deploy -n sergio
+  403  kubectl describe service nginx-np -n sergio
+  404  vim dp1.yaml 
+  405  kubectl apply -f dp1.yaml -n sergio
+  406  kubectl describe deploy nginx-deployment
+  407  kubectl describe deploy nginx-deployment -n sergio
+  408  kubectl get deploy nginx-deployment -n sergio
+  409  kubectl get pods -n sergio
+  410  kubectl get pods -n sergio -o wide
+  411  kubectl get pods -n sergio --show-labels
+  412  vim np.yaml 
+  413  kubectl get services -n sergio
+  414  kubectl delete service nginx-np
+  415  kubectl delete service nginx-np -n sergio
+  416  kubectl create service nodeport nginx --tcp=8080:80 -n sergio
+  417  kubectl get services -n sergio
+  418  kubectl delete service nginx- -n sergio
+  419  kubectl delete service nginx -n sergio
+  420  kubectl create service nodeport nginx --tcp=8080:80 -n sergio
+  421  kubectl get services -n sergio
+  422  curl 10.96.100.5:31953
+  423  kubectl describe service nginx -n sergio
+  424  curl 10.96.100.5:8080
+  425  kubectl describe service nginx -n sergio
+  426  kubectl get service nginx -n sergio -o yaml
+  427  kubectl get services
+  428  curl https://10.96.0.1//api/v1/namespaces/sergio/services/nginx
+  429  curl -k https://10.96.0.1//api/v1/namespaces/sergio/services/nginx
+  430  kubectl get services
+  431  kubectl get service nginx -n sergio -o yaml
+  432  vim np.yaml 
+  433  kubectl delete service nginx
+  434  kubectl delete service nginx -n sergio
+  435  kubectl apply -f np.yaml -n sergio
+  436  kubectl get service nginx -n sergio
+  437  kubectl delete service nginx -n sergio
+  438  vim np.yaml 
+  439  kubectl apply -f np.yaml -n sergio
+  440  kubectl get service nginx-np -n sergio
+  441  vim np.yaml 
+  442  vim dp1.yaml 
+  443  kubectl apply -f dp1.yaml -n sergio
+  444  kubectl apply -f np.yaml -n sergio
+  445  kubectl get nodes --show-labels
+  446  kubectl get nodes -o wide
+  447  kubectl get nodes
+  448  kubectl describe node ip-172-31-5-189.ap-south-1.compute.internal
+  449  kubectl get nodes
+  450  kubectl describe node ip-172-31-5-189.ap-south-1.compute.internal
+  451  ls -la
+  452  kubectl get volumes -n agasthi
+  453  kubectl get explain
+  454  kubectl get -h
+  455  kubectl get -h | grep vol
+  456  kubectl get pods -n agasthi
+  457  kubectl describe pod hostpath -n agasthi
+  458  cat ../agasthi/hostpath.yaml 
+  459  kubectl get pods -o wide -n agasthi
+  460  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-18-137.ap-south-1.compute.internal
+  461  kubectl exec -it hostpath /bin/bash -n agasthi
+  462  cat ../rajesh/hostpath.yaml 
+  463  cat ../rajesh/nfs.yaml 
+  464  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-18-137.ap-south-1.compute.internal
+  465  kubectl get pods -n srinath -o wide
+  466  kubectl describe pod test-pd -n srinath
+  467  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-18-137.ap-south-1.compute.internal
+  468  kubectl get pods -n srinath
+  469  kubectl exec -it test-pd /bin/bash -n srinath
+  470  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-16-11.ap-south-1.compute.internal"
+  471  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-16-11.ap-south-1.compute.internal
+  472  kubectl delete pod test-pd -n srinath
+  473  pwd
+  474  ls
+  475  cd kubernetes-onbmob-aug-2020/
+  476  cd srinath/
+  477  ls
+  478  vi hostpathPod.yaml
+  479  kubectl create -f hostpathPod.yaml -n srinath
+  480  vi hostpathPod.yaml
+  481  kubectl create -f hostpathPod.yaml -n srinath
+  482  kubectl get pods -n srinath -o wide
+  483  kubectl exec -it test-pd /bin/bash -n srinath
+  484  kubectl delete pod test-pd -n srinath
+  485  kubectl get pods -n srinath
+  486  pwd
+  487  vi nfsPod.yaml
+  488  kubectl create -f nfsPod.yaml -n srinath
+  489  vi nfsPod.yaml
+  490  kubectl create -f nfsPod.yaml -n srinath
+  491  kubectl get pods -n srinath
+  492  kubectl exec -it my-dep1-57c7d8c448-xk8xm /bin/bash -n=srinath
+  493  kubectl get pods -n srinath -o wide
+  494  show mount -e
+  495  kubectl exec -it my-dep1-57c7d8c448-xk8xm /bin/bash -n=srinath
+  496  vi reverseproxy.conf
+  497  vi configmapPod.yaml
+  498  kubectl create configmap my-config --from-file=reverseproxy.conf
+  499  kubectl create configmap my-config --from-file=reverseproxy.conf -n srinath
+  500  kubectl get cm -n srinath
+  501  kubectl describe cm my-config -n srinath
+  502  kubectl create -f configmapPod.yaml -n srinath
+  503  kubectl exec -it helloworld-nginx /bin/bash -n srinath
+  504  cd kubernetes-onbmob-aug-2020/sunil/
+  505  ll
+  506  vim empty.yaml
+  507  more empty.yaml 
+  508  vi empty.yaml 
+  509  kubectl get pods -n=sunil
+  510  kubectl delete pod hello-pod-sunil2 -n=sunil
+  511  kubectl delete pod hello-pod-sunil2 -n=sunil -o wide
+  512  kubectl get pods -n=sunil -o wide 
+  513  kubectl create -f empty.yaml -n=sunil
+  514  kubectl get pods -n=sunil -o wide 
+  515  kubectl 
+  516  kubectl get pods -n=sunil -o wide 
+  517  kubectl exec 
+  518  kubectl exec -h
+  519  kubectl get pods -n=sunil -o wide 
+  520  kubectl exce -it emptydir /bin/bash
+  521  kubectl exec -it emptydir /bin/bash
+  522  kubectl exec -it hello-pod-sunil1 /bin/bash
+  523  kubectl exec -it hello-pod-sunil1 /bin/bash -n=sunil
+  524  kubectl exec -it emptydir /bin/bash -n=sunil
+  525  kubectl get pods -n=sunil
+  526  vim empty.yaml 
+  527  vim empty.yaml  -o wide
+  528  kubectl get pods -n=sunil -o wide 
+  529  sudo -s
+  530  kubectl get pods -n=sunil -o wide 
+  531  kubectl delete pods emptydir -n=sunil
+  532  ll
+  533  vim host.yaml
+  534  more host.yaml 
+  535  kubectl create -f host.yaml  -n=sunil 
+  536  kubectl get pods -n=sunil -o wide
+  537  kubectl exec -it prod -n=sunil
+  538  kubectl exec -it prod  /bin/bash -n=sunil
+  539  kubectl get pods -n=sunil -o wide
+  540  kubectl exec -it hello-pod-sunil2 /bin/bash -n=sunil
+  541  kubectl exec -it hello-pod-sunil2 /bin/bash -n=sunil
+  542  kubectl delete pod prod -n=sunil 
+  543  sudo -s
+  544  kubectl delete pod prod -n=sunil 
+  545  kubectl get pods -n=sunil -o wide
+  546  cd ../rajesh/
+  547  ll
+  548  cp hostpath.yaml ../sunil/
+  549  cd ../sunil/
+  550  ll
+  551  vim hostpath.yaml 
+  552  cd ../rajesh/
+  553  ll
+  554  cp nfs.yaml ../sunil/
+  555  cd ../sunil/
+  556  ll
+  557  vim nfs.yaml 
+  558  kubectl create -f nfs.yaml -n=sunil
+  559  kubectl get pods -n=sunil
+  560  kubectl exec -it my-dep1-57c7d8c448-drmww /bin/bash -n=sunil
+  561  kubectl get pods -n=sunil
+  562  kubectl exec -it my-dep1-57c7d8c448-9zl9s /bin/bash -n=sunil
+  563  ll
+  564  cd ../rajesh/
+  565  ll
+  566  cp cm.yaml  reverseproxy.conf ../sunil/
+  567  cd ../sunil/
+  568  ll
+  569  vim cm.yaml 
+  570  kubectl create -f cm.yaml -n=sunil
+  571  kubectl get pod -n=sunil
+  572  ll
+  573  vim cm.yaml 
+  574  vim reverseproxy.conf
+  575  kubectl get pod -n=sunil
+  576  top
+  577  free -m
+  578  clear
+  579  kubectl get pod -n=sunil
+  580  cd ../rajesh/
+  581  ll
+  582  cp pv1.yaml pv2.yaml ../sunil/
+  583  cd ../sunil/
+  584  ll
+  585  vim pv1.yaml 
+  586  kubectl get pod -n=sunil
+  587  ll
+  588  vim cm.yaml
+  589  kubectl get pod -n=sunil
+  590  kubectl 
+  591  vim pv1.yaml 
+  592  kubectl  pv1.yaml -n=sunil 
+  593  kubectl get pod -n=sunil
+  594  kubectl get -h
+  595  kubectl describe pv 
+  596  vim pv1.yaml 
+  597  kubectl describe pv 
+  598  kubectl describe pv pv00010
+  599  kubectl get pod -n=sunil
+  600  kubectl describe pod my-dep1-57c7d8c448-9zl9s -n=sunil 
+  601  kubectl get pod -n=sunil
+  602  kubectl create delete  cm.yaml -n=sunil
+  603  kubectl create delete  helloworld-nginx -n=sunil
+  604  ll
+  605  vim pv2.yaml
+  606  kubectl create -f pv2.yaml -n=sunil
+  607  vim pv2.yaml 
+  608  kubectl describe pv pv00020
+  609  ll
+  610  cd ../rajesh/
+  611  ll
+  612  vim pv2.yaml 
+  613  vim pv1.yaml 
+  614  vim pvc.yaml 
+  615  vim claim.yaml
+  616  kubectl create -f claim.yaml -n=sunil
+  617  kubectl get pods -n=sunil
+  618  vim pvclaim.yaml
+  619  kubectl create -f pvclaim.yaml -n=sunil
+  620  kubectl get pods -n=sunil
+  621  vim cm.yaml 
+  622  kubectl apply -f cm.yaml -n=sunil
+  623  kubectl get pods -n=sunil
+  624  vim cm.yaml 
+  625  kubectl create -f cm.yaml -n=sunil
+  626  kubectl get pods -n=sunil
+  627  cd ../Girish.M/
+  628  ll
+  629  vim configmap.conf
+  630  cd ..
+  631  ll
+  632  cd sunil/
+  633  cd ../agasthi/
+  634  ll
+  635  cd ../
+  636  cd sunil/
+  637  ll
+  638  vim cm.yaml 
+  639  kubectl get pods -n=sunil 
+  640  kubectl describe -h
+  641  kubectl describe pod helloworld-nginx1 -h
+  642  kubectl describe pod helloworld-nginx1 -n=sunil
+  643  ll
+  644  vim cm.yaml 
+  645  vim nfs.yaml 
+  646  vim cm.yaml 
+  647  vim reverseproxy.conf
+  648  vim cm.yaml 
+  649  vim secret.yaml
+  650  vim mysecret.yaml
+  651  kubectl create -f mysecret.yaml -n=sunil
+  652  kubectl create -f secret.yaml -n=sunil
+  653  kubectl get pods -n=sunil 
+  654  kubectl describe secret mypodsecret
+  655  kubectl describe pod  mypodsecret
+  656  vim mysecret.yaml
+  657  kubectl describe Secret
+  658  kubectl describe Secret -n=sunil
+  659  vim cm.yaml 
+  660  kubectl create -f cm.yaml -n=suni
+  661  kubectl create -f cm.yaml -n=sunil
+  662  kubectl get pod -n=sunil
+  663  kubectl create configmap my-config --from-file=reverseproxy.conf
+  664  kubectl create configmap my-config --from-file=reverseproxy.conf -n=sunil
+  665  kubectl get cm
+  666  kubectl describe cm my-config
+  667  kubectl get pod -n=sunil
+  668  kubectl exec -it helloworld-nginx /bin/bash -n=sunil
+  669  l
+  670  ls
+  671  cd kubernetes-onbmob-aug-2020/
+  672  cd shantha/
+  673  ls
+  674  vim test.conf
+  675  ls
+  676  kubectl create configmap test-config --from-file=test.conf 
+  677  kubectl create configmap test-config --from-file=test.conf -n=shantha
+  678  kubectl get cm -n=shantha
+  679  kubectl describe t cm -n=shantha
+  680  kubectl describe cm -n=shantha
+  681  vim confimap.yaml
+  682  vim confimap.yaml
+  683  kubectl create -f confimap.yaml -n=shantha
+  684  kubectl get nodes -n=shantha
+  685  kubectl get pods -n=shantha
+  686  kubectl delete pod pod-nginx1 -n=shantha
+  687  kubectl get pods -n=shantha
+  688  kubectl delete pod emptydir-pod -n=shantha
+  689  kubectl get pods -n=shantha
+  690  kubectl describe pods configmap -n=shantha
+  691  vim confimap.yaml 
+  692  kubectl get cm -n=shantha
+  693  vim confimap.yaml
+  694  kubectl describe pods configmap -n=shantha
+  695  kubectl delete pod config -n=shantha
+  696  kubectl delete pod configmap -n=shantha
+  697  kubectl create -f confimap.yaml -n=shantha
+  698  kubectl get pod config -n=shantha
+  699  kubectl get pods config -n=shantha
+  700  kubectl get pods  -n=shantha
+  701  kubectl describe pods configmap -n=shantha
+  702  kubectl get pods config -n=shantha
+  703  kubectl get pods  -n=shantha
+  704  cd ../gopi/
+  705  ls
+  706  vim cm.yaml 
+  707  cd. .
+  708  cd ../shantha/
+  709  ls
+  710  vim confimap.yaml 
+  711  kubectl describe pods helloworld-nginx1 -n gopi
+  712  kubectl get pods  -n=shantha
+  713  kubectl delete pod configmap -n=shantha
+  714  kubectl get pods  -n=shantha
+  715  kubectl delete pod pod-nginx1 -n=shantha
+  716  vim confimap.yaml 
+  717  kubectl get cm -n=shantha
+  718  vim confimap.yaml 
+  719  ls
+  720  vim confimap.yaml 
+  721  kubectl create -f confimap.yaml -n=shantha
+  722  kubectl get pods  -n=shantha
+  723  kubectl describe configmap -n=shantha
+  724  kubectl get pods  -n=shantha
+  725  kubectl describe configmap -n=shantha
+  726  kubectl get pods  -n=shantha
+  727  kubectl describe pod configmap -n=shantha
+  728  vim confimap.yaml 
+  729  kubectl get cm -n=shantha
+  730  kubectl describe pod configmap -n=shantha
+  731  vim confimap.yaml 
+  732  ls
+  733  vim test.conf 
+  734  kubectl describe cm -n=shantha
+  735  kubectl describe pod configmap -n=shantha
+  736  kubectl logs pod configmap -n=shantha
+  737  kubectl logs configmap -n=shantha
+  738  ls
+  739  vim test.conf 
+  740  kubectl describe pod configmap -n=shantha
+  741  kubectl edit cm -n=shantha
+  742  kubectl describe pod configmap -n=shantha
+  743  kubectl get pods -n=shantha
+  744  kubectl delete pod configmap -n=shantha
+  745  kubectl get pods -n=shantha
+  746  kubectl create -f confimap.yaml -n=shantha
+  747  kubectl get pods -n=shantha
+  748  kubectl exec -it configmap /bin/sh -n=shantha
+  749  kubectl exec -it configmap /bin/bassh -n=shantha
+  750  kubectl exec -it configmap /bin/bash -n=shantha
+  751  ll
+  752  cd kubernetes-onbmob-aug-2020/
+  753  ll
+  754  cd priya/
+  755  ll
+  756  cd ..
+  757  ll
+  758  cd srinath/
+  759  ll
+  760  cat commands.txt 
+  761  cd ..
+  762  ll
+  763  cd priya/
+  764  ll
+  765  date
+  766  cd ..
+  767  ll
+  768  cd agasthi
+  769  ll
+  770  cd ..
+  771  ll
+  772  cd priya/
+  773  ll
+  774  vi emp-vol.yaml
+  775  ll
+  776  vi emp-vol.yaml 
+  777  ll
+  778  kubectl create -f emp-vol.yaml -n=priya
+  779  ll
+  780  cat emp-vol.yaml 
+  781  kubectl get po -n=priya
+  782  kubectl get po -n=priya -0 wide
+  783  kubectl get po -n=priya -o wide
+  784  curl http://10.47.0.46
+  785  kubectl get svc --all-namespaces
+  786  kubectl get po --all-namespaces
+  787  priya         priya                                                                  1/1     Running       1          21h
+  788  priya         priya-dep-fdc6b7568-24rnw                                              1/1     Terminating   1          21h
+  789  priya         priya-dep-fdc6b7568-2vgdl                                              1/1     Running       0          3h9m
+  790  priya         priya-dep-fdc6b7568-dkklj                                              1/1     Running       1          21h
+  791  priya         priya-dep-fdc6b7568-gtnff                                              1/1     Running       1          21h
+  792  priya         priya-dep-fdc6b7568-q2kz7                                              1/1     Running       1          21h
+  793  priya         priya-dep-fdc6b7568-r647w                                              1/1     Running       0          3h9m
+  794  priya         priya-dep-fdc6b7568-stlc5                                              1/1     Terminating   1          21h
+  795  priya         priya-lb                                                               1/1     Running       0          3h19m
+  796  priya ll
+  797  curl http://10.47.0.46
+  798  kubectl get po -n=priya
+  799  kubectl get svc -n=priya
+  800  kubectl get po -n=priya
+  801  ll
+  802  vo host-vol.yaml
+  803  vi host-vol.yaml
+  804  kubectl create -f host-vol.yaml -n=priya
+  805  kubectl get po -n=priya
+  806  kubectl get po -n=priya -o wide
+  807  curl http://10.47.0.7
+  808  kubectl exec -it priya-vol-host /bin/bash -n=priya
+  809  ll
+  810  cat host-vol.yaml
+  811  kubectl exec -it priya-vol-host /bin/bash -n=priya
+  812  ll
+  813  kubectl get po -n=priya -o wide
+  814  ll
+  815  vi nfs-vol.yaml
+  816  ll
+  817  vi nfs-vol.yaml
+  818  ll
+  819  kubectl create -f nfs-vol.yaml -n=priya
+  820  ll
+  821  kubectl get po -n=priya
+  822  kubectl get po
+  823  kubectl get po --all-namespaces
+  824  kubectl get po -n=priya
+  825  kubectl get deploy -n=priya
+  826  kubectl delete deploy nfs-priya -n=priya
+  827  kubectl get po -n=priya
+  828  vi nfs-vol.yaml
+  829  ll
+  830  kubectl create -f nfs-vol.yaml -n=priya
+  831  kubectl get po -n=priya
+  832  vi config.yaml
+  833  kubectl create -f config.yaml -n=priya
+  834  vi config.yaml
+  835  kubectl apply -f config.yaml -n=priya
+  836  vi config.yaml
+  837  kubectl apply -f config.yaml -n=priya
+  838  vi config.yaml
+  839  ll
+  840  kubectl get cm --all-namespace
+  841  kubectl get cm --all-namespaces
+  842  kubectl get cm rajesh --all-namespaces -o yaml
+  843  kubectl get cm rajesh -o yaml
+  844  kubectl get cm rajesh -o yaml -n=rajesh
+  845  kubectl get cm my-config -o yaml -n=rajesh
+  846  ll
+  847  vi config.yaml 
+  848  kubectl get secret --all-namespace
+  849  kubectl get secret --all-namespaces
+  850  kubectl get secrets mysecret rajesh
+  851  kubectl get secrets mysecret -n=rajesh
+  852  kubectl get secrets mysecret -n=rajesh -o yaml
+  853  kubectl get secrets mysecret -n=rajesh -o yaml --export
+  854  ll
+  855  mv config.yaml secret.yaml
+  856  ll
+  857  kubectl create -f secret.yaml -n=priya
+  858  ll
+  859  vi po.yaml
+  860  ll
+  861  vi po.yaml
+  862  vi pvc.yaml
+  863  cat po.yaml 
+  864  vi pvc.yaml
+  865  vi pv.yaml
+  866  vi pv2.yaml
+  867  cat pv.yaml 
+  868  vi pv2.yaml
+  869  ll
+  870  kubectl create -f pv.yaml -n=priya
+  871  kubectl create -f pv2.yaml -n=priya
+  872  kubectl create -f pvc.yaml -n=priya
+  873  kubectl create -f po.yaml -n=priya
+  874  vi po.yaml 
+  875  kubectl create -f po.yaml -n=priya
+  876  vi po.yaml 
+  877  kubectl create -f po.yaml -n=priya
+  878  kubectl get pv
+  879  kubectl get pv --all-namespaces
+  880  kubectl get pvc --all-namespaces
+  881  ll
+  882  cat pvc.yaml
+  883  cat pv2.yaml
+  884  kubectl get pvc --all-namespaces
+  885  kubectl edit pvc priya
+  886  kubectl edit pvc priya-pv-claim1
+  887  kubectl edit pvc priya-pv-claim1 -n=priya
+  888  ll
+  889  kubectl edit pvc priya
+  890  kubectl get pvc --all-namespaces
+  891  kubectl get pv --all-namespaces
+  892  ll
+  893  cat pvc.yaml
+  894  vi pvc2.yaml
+  895  kubectl create -f pvc2.yaml 
+  896  kubectl get pv --all-namespaces
+  897  cat pvc.yaml
+  898  kubectl get pv --all-namespaces
+  899  kubectl get pvc --all-namespaces
+  900  kubectl create -f pvc2.yaml -n=priya
+  901  kubectl get pvc --all-namespaces
+  902  kubectl get pv --all-namespaces
+  903  kubectl get pvc --all-namespaces
+  904  kubectl get pvc
+  905  kubectl delete pvc priya-pv-claim2
+  906  kubectl get pvc
+  907  kubectl get pv --all-namespaces
+  908  ll
+  909  kubectl get pv --all-namespaces
+  910  kubectl get pvc --all-namespaces
+  911  ll
+  912  kubectl get pv
+  913  kubectl get cm
+  914  kubectl get cm --all-namespaces
+  915  cd kubernetes-onbmob-aug-2020/agasthi/
+  916  ll
+  917  vim hostpath.yalm
+  918  vim hostpath.yaml
+  919  kubectl create -f hostpath.yaml -n agasthi
+  920  kubectl get pods -n agasthi
+  921  kubectl exec -it hostpath /bin/bash/ -n agasthi
+  922  kubectl exec -it hostpath /bin/bash -n agasthi
+  923  kubectl get pods -n agasthi -o wide
+  924  history >hist.txt
+  925  vim hist.txt 
+  926  cd ..
+  927  ll
+  928  vim key.pem
+  929  ssh chmod 400 key.pem 
+  930  sudo su
+  931  ssh -i "/home/centos/kubernetes-onbmob-aug-2020key.pem" centos@ip-172-31-18-137.ap-south-1.compute.internal
+  932  sudo su
+  933  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-18-137.ap-south-1.compute.internal
+  934  kubectl exec -it test-pd /bin/bash -n agasthi
+  935  kubectl get pods -n agasthi -o wide
+  936  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-18-137.ap-south-1.compute.internal
+  937  vim agasthi/emptydir.yaml 
+  938  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-18-137.ap-south-1.compute.internal
+  939  kubectl get pods -n srinath -o wide
+  940  kubectl exec -it test-pd /bin/bash -n srinath
+  941  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-16-11.ap-south-1.compute.internal
+  942  cd agasthi/
+  943  vim hostpath.yaml 
+  944  kubectl get pods -n agasthi -o wide
+  945  kubectl delete pods test-pd -n=agasthi
+  946  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-18-137.ap-south-1.compute.internal
+  947  kubectl exec -it hostpath /bin/bash -n agasthi
+  948  pwd
+  949  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-18-137.ap-south-1.compute.internal
+  950   kubectl get pods -n agasthi -o wide
+  951   kubectl get pods -n sergio -o wide
+  952  vim hostpath.yaml 
+  953  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-18-137.ap-south-1.compute.internal
+  954  ll
+  955  vim nfs.yaml
+  956  kubectl create -f nfs.yaml -n=agasthi
+  957   kubectl get pods -n agasthi -o wide
+  958  kubectl exec -it my-dep1-74cc46b645-n89gt /bin/bash -n agasthi
+  959  vim nfs.yaml 
+  960  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-18-137.ap-south-1.compute.internal
+  961  kubectl delete pod my-dep1-74cc46b645-n89gt -n=agasthi
+  962   kubectl get pods -n agasthi -o wide
+  963  kubectl exec -it my-dep1-74cc46b645-vtlr5 /bin/bash -n agasthi
+  964  vim configmap.yaml
+  965  vim reverseproxy.conf
+  966  kubectl create configmap cm-proxy --from-file=reverseproxy.conf
+  967  kubectl describe cm my-config
+  968  kubectl create configmap cm-proxy --from-file=reverseproxy.conf -n=agasthi
+  969  kubectl delete configmap cm-proxy --from-file=reverseproxy.conf
+  970  kubectl delete configmap cm-proxy
+  971  vim reverseproxy.conf
+  972  vim configmap.yaml
+  973  kubectl exec -it cm-nginx /bin/bash -n agasthi
+  974  kubectl create -f configmap.yaml -n agasthi
+  975  kubectl exec -it cm-nginx /bin/bash -n agasthi
+  976   kubectl get pods -n agasthi -o wide
+  977  curl http://10.47.0.58
+  978  curl http://10.47.0.58/hello.html
+  979  vim reverseproxy.conf 
+  980  cd kubernetes-onbmob-aug-2020/shantha/
+  981  ls
+  982  kubectl get pods -n=shantha
+  983  kubectl delete pods -n=shantha
+  984  kubectl delete pods --all -n=shantha
+  985  kubectl get pods -n=shantha
+  986  ls
+  987  kubectl get pv -n=shantha
+  988  ssh -i "/home/centos/kubernetes-onbmob-aug-2020/key.pem" centos@ip-172-31-18-137.ap-south-1.compute.internal
+  989  cd /home/centos/kubernetes-onbmob-aug-2020/
+  990  ll
+  991  cd madhu/
+  992  ll
+  993  vim dep_1.yaml
+  994  kubectl delete -f dep_1.yaml -n=madhu
+  995  kubectl delete -f podtest.yaml -n=madhu
+  996  kubectl delete -f hello-pod-madhu -n=madhu
+  997  kubectl delete rc -n=madhu
+  998  cd kubernetes-onbmob-aug-2020/agasthi/
+  999  kubectl create ns agasthi
+ 1000  kubectl get pods -n=agasthi
+ 1001  mkdir statefulset
+ 1002  cd statefulset/
+ 1003  vim pv1.yaml
+ 1004  vim pv2.yaml
+ 1005  vim StatefulSet.yaml
+ 1006  kubectl create -f ../statefulset/ -n agasthi
+ 1007  kubectl get pv -n agasthi
+ 1008  kubectl get pods -n agasthi
+ 1009  kubectl delete -f StatefulSet.yaml -n agasthi
+ 1010  kubectl get pods -n agasthi
+ 1011  kubectl get pv -n agasthi
+ 1012  kubectl delete pv apv1
+ 1013  kubectl delete pv mpv0001
+ 1014  kubectl delete pv apv2
+ 1015  kubectl delete pv pv-2-5g
+ 1016  kubectl get pv -n agasthi
+ 1017  kubectl get pods -n agasthi
+ 1018  kubectl create -f ../statefulset/ -n agasthi
+ 1019  vim StatefulSet.yaml 
+ 1020  kubectl get pods -n mohan
+ 1021  kubectl get pv | grep "mohan"
+ 1022  kubectl resources
+ 1023  kubectl resources -h
+ 1024  kubectl resource -h
+ 1025  kubectl -h
+ 1026  kubectl api-versions
+ 1027  kubectl --context=employee-context get pods
+ 1028  cd ..
+ 1029  mkdir key
+ 1030  cd key/
+ 1031  openssl genrsa -out private.key 2048
+ 1032  openssl req -new -key private.key -out kube.csr -subj "/CN=aagasthi/O=onmobile"
+ 1033  ll
+ 1034  openssl x509 -req -in kube.csr -CA /etc/kubernetes/pki/kube8.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out /home/ec2-user/tecnotree/kube.crt -days 500
+ 1035  ll /etc/kubernetes/pki/
+ 1036  openssl x509 -req -in kube.csr -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out /home/ec2-user/tecnotree/kube.crt -days 500
+ 1037  ll
+ 1038  kubectl config set-context employee-context --cluster=kubernetes --namespace=agasthi --user=employee
+ 1039  kubectl --context=employee-context get pods
+ 1040  kubectl view cofnig
+ 1041  kubectl view config
+ 1042  kubectl config view
+ 1043  ubectl config set-credentials akub8s --client-certificate=/home/ec2-user/tecnotree/employee.crt  --client-key=/home/ec2-user/tecnotree/employee.key
+ 1044  kubectl config set-credentials akub8s --client-certificate=/home/ec2-user/tecnotree/employee.crt  --client-key=/home/ec2-user/tecnotree/employee.key
+ 1045  kubectl config set-context akub8s-context --cluster=kubernetes --namespace=agasthi --user=akub8s
+ 1046  kubectl --context=akub8-context get pods
+ 1047  cd ..
+ 1048  history >histd4.txt

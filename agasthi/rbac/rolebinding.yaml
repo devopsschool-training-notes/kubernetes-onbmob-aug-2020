@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: agasthi-role-binding
+  namespace: agasthi
+subjects:
+- kind: User
+  name: agasthi
+  apiGroup: ""
+roleRef:
+  kind: Role
+  name: agasthi-role
+  apiGroup: ""

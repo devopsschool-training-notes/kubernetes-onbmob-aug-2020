@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web1
+  namespace: rajesh
+spec:
+  selector:
+    matchLabels:
+      run: web1
+  template:
+    metadata:
+      labels:
+        run: web1
+    spec:
+      containers:
+      - image: gcr.io/google-samples/hello-app:1.0
+        imagePullPolicy: IfNotPresent
+        name: web2
+        ports:
+        - containerPort: 8080
+          protocol: TCP

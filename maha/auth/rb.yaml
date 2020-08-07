@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: deployment-manager-binding
+  namespace: maha
+subjects:
+- kind: User
+  name: maha
+  apiGroup: ""
+roleRef:
+  kind: Role
+  name: deployment-manager-maha
+  apiGroup: ""
