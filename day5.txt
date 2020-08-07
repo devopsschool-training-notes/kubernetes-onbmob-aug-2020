@@ -1,0 +1,211 @@
+Ingress
+Node Maintainance
+======================
+Clustor backup and Restore
+===================	
+Clustor Upgarde			
+Clustor HA
+Monitoring Kubernetes
+EKS Setup
+K8s with windows
+Opeators
+
+===========================================
+Workstation - 13.234.111.91
+
+Single service
+Multiple services
+Services using a default backend
+Services using name based virtual hosts
+=============================================
+https://www.devopsschool.com/blog/kubernetes-ingress-complete-reference/
+https://www.devopsschool.com/blog/kubernetes-basic-ingress-tutorials-with-examples-and-lab-using-nodeport
+
+Node Maintainance
+https://www.devopsschool.com/blog/kubernetes-cluster-management-management-complete-reference/
+
+taint
+https://www.devopsschool.com/blog/deep-dive-into-kubernetes-taint-with-node/
+https://www.devopsschool.com/blog/understanding-kubernetess-taints-and-tolerations-in-easy-way/
+
+cordon
+uncordon
+
+NoSchedule: Pods that do not tolerate this taint are not scheduled on the node.
+==============================================================================
+
+tolerate ==> 
+		POD should be created in node with certain cond....
+taint 
+
+
+kubectl taint nodes ip-172-31-18-137.ap-south-1.compute.internal dedicated=special-user:NoSchedule
+
+kubectl taint nodes ip-172-31-18-137.ap-south-1.compute.internal dedicated=special-user:NoSchedule-
+===============================================================
+Clustor backup and Restore
+===========================================
+etcd
+
+Clustor backup and Restore
+https://www.devopsschool.com/blog/kubernetes-cluster-backup-and-restore-using-etcdctl-tool/
+
+
+
+ 504  ETCD_VERSION=${ETCD_VERSION:-v3.3.1}
+  505  curl -L https://github.com/coreos/etcd/releases/download/$ETCD_VERSION/etcd-$ETCD_VERSION-linux-amd64.tar.gz -o etcd-$ETCD_VERSION-linux-amd64.tar.gz
+  506  ls
+  507  tar xzvf etcd-$ETCD_VERSION-linux-amd64.tar.gz
+  508  cler
+  509  ls
+  510  clear
+  511  ls
+  512  rm etcd-$ETCD_VERSION-linux-amd64.tar.gz
+  513  rm etcd-$ETCD_VERSION-linux-amd64.tar.gz
+  514  ls
+  515  cd etcd-$ETCD_VERSION-linux-amd64
+  516  ls
+  517  sudo cp etcd /usr/local/bin/
+  518  sudo cp etcdctl /usr/local/bin/
+  519  ls
+  520  cd ..
+  521  ls
+  522  rm -rf etcd-v3.3.1-linux-amd64
+  523  etcdctl --version
+  524  clear
+  525  etcdctl --version
+  526  chmod 755 /usr/local/bin/etcdctl
+  527  etcdctl --version
+  528  which etcdctl
+  529  export PATH=$PATH:/usr/local/bin/
+  530  which etcdctl
+  531  history
+
+
+
+// Do not forget to mention etcd API version 3
+ETCDCTL_API=3 etcdctl \
+--endpoints https://172.31.22.124:2379 \
+--cacert=/etc/kubernetes/pki/etcd/ca.crt \
+--cert=/etc/kubernetes/pki/etcd/server.crt \
+--key=/etc/kubernetes/pki/etcd/server.key \
+snapshot save snapshot-backup.db
+
+
+
+
+
+ETCDCTL_API=3 etcdctl --endpoints https://172.31.22.124:2379 snapshot status snapshot-backup.db
+
+
+// Do not forget to mention etcd API version 3
+ETCDCTL_API=3 etcdctl \
+--endpoints https://172.31.22.124:2379 \
+--cacert=/etc/kubernetes/pki/etcd/ca.crt \
+--cert=/etc/kubernetes/pki/etcd/server.crt \
+--key=/etc/kubernetes/pki/etcd/server.key \
+snapshot restore snapshot-backup.db
+===============================================
+Clustor Upgarde	
+----------------
+kubeadm
+===================
+
+
+
+sudo kubeadm init --control-plane-endpoint "LOAD_BALANCER_DNS:LOAD_BALANCER_PORT" --upload-certs
+
+sudo kubeadm join 192.168.0.200:6443 --token 9vr73a.a8uxyaju799qwdjv --discovery-token-ca-cert-hash sha256:7c2e69131a36ae2a042a339b33381c6d0d43887e2de83720eff5359e26aec866 --control-plane --certificate-key f8902e114ef118304e561c3ecd4d0b543adc226b7a07f675f56564185ffe0c07
+
+https://stackoverflow.com/questions/61365202/nginx-ingress-service-ingress-nginx-controller-admission-not-found
+
+============================================================================
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+52.66.144.101
+
+
+
+
+
+curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.7/2020-07-08/bin/linux/amd64/kubectl
+
+
+https://B3E6B548EE8032BB0A5C6B4F76AE18F1.yl4.ap-south-1.eks.amazonaws.com
+
+aws eks --region ap-south-1 update-kubeconfig --name eks
+
+
+https://www.devopsschool.com/tutorial/kubernetes/eks-setup-configure.html
+
+https://www.devopsschool.com/blog/understanding-the-tools-sets-in-kubernetes-ecosystem/
+=================================================================================
+Monitoring Kubernetes
+	Infra - CPU - RAM 
+		Container 	- Cadvisor	https://github.com/google/cadvisor
+		Pod		- https://github.com/kubernetes-sigs/metrics-server	
+		Node		- Promethus-grafana
+					helm
+					operators
+		event 		- heptiolabs/eventrouter
+		exporter 	--- Time series - less storage - less memory  + large exports
+	Network 
+
+	Accessibility
+		Service		- Envoy & Istio & Consul
+
+	Logh
+		Container Log	- ELBK - elasticsearch-logstash-beats-kibana
+		Kubelet log
+		-----------------------------
+		Log monitoring 
+			Security
+			Errors
+		===================
+		Beats - which collect Log - Not a time - Less number of beats
+		https://www.devopsschool.com/tutorial/kubernetes/kubernetes-logging-with-elasticsearch-fluentd-kibana.html
+		
+
+
+
+Kiali – Kiali project, observability for the Istio service mesh
+Prometheus – The Prometheus monitoring system and time series database.
+Grafana – The tool for beautiful monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More
+Kubetail – Bash script to tail Kubernetes logs from multiple pods at the same time
+Searchlight – Alerts for Kubernetes
+linkerd2 Monitoring Mixin for Grafana – Grafana dashboards for linkerd2 monitoring and can work in standalone (default) or in multi cluster setup
+kuberhaus – Kubernetes resource dashboard with node/pod layout and resource requests
+Kubernetes Job/CronJob Notifier – This tool sends an alert to slack whenever there is a Kubernetes cronJob/Job failure/success
+
+=========================================
+yum - apt-get - nuget - 
+=========================
+helm - package manager for k8
+
+helm init
+-------------templates --- all yaml
+
+
+13.234.111.91
+https://www.devopsschool.com/tutorial/kubernetes/kubernetes-monitoring-with-prometheus-grafana.html
+
+======================================
+K8s with windows
+------------------------
+	2019+
+	Docker
+	Network
+	kubectl join
+
+
+
+
+
+
+
+
+
+
